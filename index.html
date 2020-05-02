@@ -1,10 +1,112 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Information Theory</title>
-    <meta http-equiv="refresh" content="0; URL='presentation/index.html'"/>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Information Theory</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reset.css">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
 </head>
+<body>
+  <div class="reveal">
+    <div class="slides">
 
+<section id="title-slide">
+  <h1 class="title">Information Theory</h1>
+</section>
+
+<section id="what-is" class="slide level3">
+<h3>What Is?</h3>
+<p>Understanding the movement and transformation of information through mathematical and physical laws, addressing and answering two fundamental questions:</p>
+<ol type="1">
+<li><p>How can much can you compress data? (The entropy of the data, H).</p></li>
+<li><p>At which rate can you reliable communicate through a channel? (The channel capacity, C).</p></li>
+</ol>
+</section>
+<section id="why-do" class="slide level3">
+<h3>Why Do?</h3>
+<p>Widely Applicable! (Sneak Peak):</p>
+<ul>
+<li><p>Compression (duh!)</p></li>
+<li><p>Communications and Networking (duh!)</p></li>
+<li><p>Data Oriented Design</p></li>
+<li><p>Security</p></li>
+<li><p>Machine Learning (huh?)</p></li>
+<li><p>Compute Vision (huh?)</p></li>
+<li><p>Computer Graphics (huh!?)</p></li>
+<li><p>^^ Almost Everything in Computer Science</p></li>
+</ul>
+</section>
+<section id="what-contains" class="slide level3">
+<h3>What Contains?</h3>
+<ul>
+<li><p>Foundations: Intro, Bayes, Entropy, Shannon’s Theorems</p></li>
+<li><p>Applications: Codes, Sampling, Compression</p></li>
+<li><p>Relations: DoD, Security, ML, Graphics</p></li>
+</ul>
+<p><em>Not</em> a mathematically rigorous presentation! Arguments rely on intuition, <em>not</em> formal proof. User-friendly <em>not</em> technically precise.</p>
+</section>
+<section>
+<section id="foundations" class="title-slide slide level2">
+<h2>Foundations</h2>
+
+</section>
+<section id="data-is-not-information" class="slide level3">
+<h3>Data Is Not Information</h3>
+<p>Intuition: A new hard drive has 1,000,000,000,000 bits of data, but not 1,000,000,000,000.</p>
+<p>Is there a difference between a 0-initialized hard drive, and a randomly-initialized hard drive in terms of information?</p>
+</section>
+<section id="probabilities-matter" class="slide level3">
+<h3>Probabilities Matter</h3>
+<p>The less probable an event is, the more information it contains when it happens.</p>
+</section>
+<section id="bit-of-data-vs-1-bit-of-information" class="slide level3">
+<h3>1 Bit of Data vs 1 Bit of Information</h3>
+<p>We can say that 1 Bit of Data contains 1 Bit of Information if the probability of that Bit being 1 or 0 is 0.5.</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
 </html>
