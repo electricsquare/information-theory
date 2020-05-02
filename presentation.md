@@ -89,14 +89,50 @@ In othr wrds, yo cn rd ths sntnce evn wth mssng lttrs.
 
 
 
-## Bayes Theorem
+## Some Probability
 
 ---
 
 ### Product Rule
 
-p(A, B) = p(A | B)p(B)
+The probability that both *A* and *B* will happen:
+
+$$p(A,B) = p(A|B)p(B) = p(B|A)p(A)$$
+
+Example: The Probability that Alice will buy a hot dog *and* ketchup?
+
+::: notes
+
+If we know the probability of Alice buying ketchup given that she's bought a hot dog. *And* we know how likely she is to buy a hot dog. Then we know how likely *both* are to happen.
+
+:::
 
 ---
 
 ### Sum Rule 
+
+If the probability of A is affected by the outcome of a number of events *B*
+
+$$p(A) = \sum_{B} p(A,B) = \sum_{B} p(A|B)p(B)$$
+
+Example: The Probability that Bob will beat Alice at chess.
+
+::: notes
+
+If we know the probability that Bob will beat Alice when starting with whites, and the probability that Bob will beat Alice when starting with blacks - then we know the probability that Bob will beat Alice if we know how likely he is to start with either of those colours.
+
+:::
+
+---
+
+### Bayes Theorem
+
+Super-duper important, we aren't going to derive it, but have a look at this majestic thing:
+
+$$p(B|A)=\frac{p(A|B)(p(B)}{p(A)}$$
+
+::: notes
+
+Derived from the product and sum rules.
+
+:::
