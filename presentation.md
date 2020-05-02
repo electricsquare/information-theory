@@ -28,6 +28,14 @@ Widely Applicable! (Sneak Peak):
 
   - ^^ Almost Everything in Computer Science
 
+::: notes
+
+Information Theory has some pretty obvious applications, but hopefully some here will surprise you!
+
+We will be delving into the more interesting links later
+
+:::
+
 ----
 
 ### What Contains?
