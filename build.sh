@@ -1,1 +1,1 @@
-pandoc -t revealjs -s presentation.md -o index.html
+pandoc -t revealjs -s presentation.md -o index.html --mathml

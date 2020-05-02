@@ -106,7 +106,7 @@
 <section id="product-rule" class="slide level3">
 <h3>Product Rule</h3>
 <p>The probability that both <em>A</em> and <em>B</em> will happen:</p>
-<p><br /><span class="math display"><em>p</em>(<em>A</em>, <em>B</em>) = <em>p</em>(<em>A</em>|<em>B</em>)<em>p</em>(<em>B</em>) = <em>p</em>(<em>B</em>|<em>A</em>)<em>p</em>(<em>A</em>)</span><br /></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="prefix">|</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="prefix">|</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(A,B) = p(A|B)p(B) = p(B|A)p(A)</annotation></semantics></math></p>
 <p>Example: The Probability that Alice will buy a hot dog <em>and</em> ketchup?</p>
 <aside class="notes">
 <p>If we know the probability of Alice buying ketchup given that she’s bought a hot dog. <em>And</em> we know how likely she is to buy a hot dog. Then we know how likely <em>both</em> are to happen.</p>
@@ -115,7 +115,7 @@
 <section id="sum-rule" class="slide level3">
 <h3>Sum Rule</h3>
 <p>If the probability of A is affected by the outcome of a number of events <em>B</em></p>
-<p><br /><span class="math display"><em>p</em>(<em>A</em>) = ∑<sub><em>B</em></sub><em>p</em>(<em>A</em>, <em>B</em>) = ∑<sub><em>B</em></sub><em>p</em>(<em>A</em>|<em>B</em>)<em>p</em>(<em>B</em>)</span><br /></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>∑</mo><mi>B</mi></munder><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>∑</mo><mi>B</mi></munder><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="prefix">|</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(A) = \sum\limits_{B} p(A,B) = \sum_{B} p(A|B)p(B)</annotation></semantics></math></p>
 <p>Example: The Probability that Bob will beat Alice at chess.</p>
 <aside class="notes">
 <p>If we know the probability that Bob will beat Alice when starting with whites, and the probability that Bob will beat Alice when starting with blacks - then we know the probability that Bob will beat Alice if we know how likely he is to start with either of those colours.</p>
@@ -124,7 +124,7 @@
 <section id="bayes-theorem" class="slide level3">
 <h3>Bayes Theorem</h3>
 <p>Super-duper important, we aren’t going to derive it, but have a look at this majestic thing:</p>
-<p><br /><span class="math display">$$p(B|A)=\frac{p(A|B)(p(B)}{p(A)}$$</span><br /></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="prefix">|</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="prefix">|</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">p(B|A) = \frac{p(A|B)(p(B)}{p(A)}</annotation></semantics></math></p>
 <aside class="notes">
 <p>Derived from the product and sum rules.</p>
 </aside>

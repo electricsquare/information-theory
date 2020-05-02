@@ -113,7 +113,7 @@ If we know the probability of Alice buying ketchup given that she's bought a hot
 
 If the probability of A is affected by the outcome of a number of events *B*
 
-$$p(A) = \sum_{B} p(A,B) = \sum_{B} p(A|B)p(B)$$
+$$p(A) = \sum\limits_{B} p(A,B) = \sum_{B} p(A|B)p(B)$$
 
 Example: The Probability that Bob will beat Alice at chess.
 
@@ -129,7 +129,7 @@ If we know the probability that Bob will beat Alice when starting with whites, a
 
 Super-duper important, we aren't going to derive it, but have a look at this majestic thing:
 
-$$p(B|A)=\frac{p(A|B)(p(B)}{p(A)}$$
+$$p(B|A) = \frac{p(A|B)(p(B)}{p(A)}$$
 
 ::: notes
 
