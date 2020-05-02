@@ -1,1 +1,1 @@
-pandoc -t revealjs -s presentation.md -o index.html --metadata title="Information Theory"
+pandoc -t revealjs -s presentation.md -o index.html
