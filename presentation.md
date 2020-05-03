@@ -227,7 +227,7 @@ Bring that back to earlier when we said that 1 bit of data contains 1 bit of inf
 :::
 
 
-### More
+### Further Entropy Reading
 
 - Joint Entropy
 - Conditional Entropy of Ensembles
@@ -254,14 +254,15 @@ Stream of data can produce $A$, $B$, $C$ and $D$, with:
 
 ### Encoding as Binary
 
-A naive fixed-length code might look like this:
+A naive code might look like this:
 
 - $A = 00$
 - $B = 01$
 - $C = 10$
 - $D = 11$
 
-This has a fixed *code rate*, $R=2$
+This has a fixed *code rate*, (the mean number of bits transmitted), $R=2$.
+
 ::: notes
 
 TODO: Convert this to a tables=
@@ -281,9 +282,40 @@ TODO: Convert this to a tables=
 
 ### Coding Efficiency
 
-The efficiency $\mu$ of coding is $\mu=\frac{H}{R}$:
+The efficiency $\mu$ of our coding is $\mu=\frac{H}{R}$:
 
 $$\mu=1.75/2=0.875$$
+
+:::
+The implication is that a coding *should* exist that itself has a coding rate $R=H$, and if we can find-it, it will be optimal.
+:::
+
+---
+
+### Variable-Length Coding
+
+Now imagine:
+
+- $A = 0$
+- $B = 10$
+- $C = 110$
+- $D = 111$
+
+. . .
+
+$$R=p(A)+2p(B)+3p(C)+3p(D)=1.75$$
+
+::: notes
+
+Explain variable length coding, and useful properties (each symbol uniquely and instantaneously decodable).
+
+<hit next>
+
+Look, it's entropy matches R!
+
+:::
+
+
 
 ---
 
@@ -293,10 +325,22 @@ $$\mu=1.75/2=0.875$$
 
 ---
 
-### Markov Process
+### On Fixed Probabilities
 
-We can model a stream of symbols as a "Markov Process". 
+Probabilities in symbol streams rarely fixed
 
+- Could be affected by previous symbol ($p(U|Q)$ is high!)
+- Can be dependant on context, the *type* of data: photos vs cartoons.
+- Can depend on recipient (encryption!)
+
+::: notes
+
+The goal of encryption is transmit data in such a way that it contains no information for anyone except the intended receiver.
+
+This is unfortunately the limits we will get to with lossless compression, but you can see the foundations of a mathematical system for understanding this stuff.
+
+Good compression systems are as much about trying to accurately *discern* the entropy of each symbol for the target recipient.
+:::
 
 
 
