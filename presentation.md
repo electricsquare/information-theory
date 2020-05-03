@@ -194,13 +194,19 @@ TODO: Intuition
 
 :::
 
-### Intition
+### Intuition
 
 Given one "bit" of data $b$ where $b=1$ with probability $p$ (and $0$ otherwise).
 
 As $p$ ranges from $0$ to $1$:
 
-TODO(Make Graph). (see https://hackage.haskell.org/package/pandoc-pyplot-2.3.0.1#readme)
+```{.matplotlib}
+import matplotlib.pyplot as plt
+
+plt.figure()
+plt.plot([0,1,2,3,4], [1,2,3,4,5])
+plt.title('This is an example figure')
+```
 
 When $p=0.5$, the Entropy maxes-out at 1.
 
