@@ -52,14 +52,14 @@
 <h3>Why Do?</h3>
 <p>Widely Applicable! (Sneak Peak):</p>
 <ul>
-<li><p>Compression (duh!)</p></li>
-<li><p>Communications and Networking (duh!)</p></li>
-<li><p>Data Oriented Design</p></li>
-<li><p>Security</p></li>
-<li><p>Machine Learning (huh?)</p></li>
-<li><p>Compute Vision (huh?)</p></li>
-<li><p>Computer Graphics (huh!?)</p></li>
-<li><p>^^ Almost Everything in Computer Science</p></li>
+<li>Compression (duh!)</li>
+<li>Communications and Networking (duh!)</li>
+<li>Data Oriented Design</li>
+<li>Security</li>
+<li>Machine Learning (huh?)</li>
+<li>Compute Vision (huh?)</li>
+<li>Computer Graphics (huh!?)</li>
+<li>^^ Almost Everything in Computer Science</li>
 </ul>
 <aside class="notes">
 <p>Information Theory has some pretty obvious applications, but hopefully some here will surprise you!</p>
@@ -69,9 +69,9 @@
 <section id="what-contains" class="slide level3">
 <h3>What Contains?</h3>
 <ul>
-<li><p>Foundations: Intro, Bayes, Entropy, Shannon’s Theorems</p></li>
-<li><p>Applications: Codes, Sampling, Compression</p></li>
-<li><p>Relations: DoD, Security, ML, Graphics</p></li>
+<li>Foundations: Intro, Bayes, Entropy, Shannon’s Theorems</li>
+<li>Applications: Codes, Sampling, Compression</li>
+<li>Relations: DoD, Security, ML, Graphics</li>
 </ul>
 <p><em>Not</em> a mathematically rigorous presentation! Arguments rely on intuition, <em>not</em> formal proof. User-friendly <em>not</em> technically precise.</p>
 </section>
@@ -163,6 +163,35 @@
 <aside class="notes">
 <p>TODO: Intuition</p>
 </aside>
+</section>
+<section id="intition" class="slide level3">
+<h3>Intition</h3>
+<p>Given one “bit” of data <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">b=1</annotation></semantics></math> with probability <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> (and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math> otherwise).</p>
+<p>As <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> ranges from <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math> to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>:</p>
+<p>TODO(Make Graph). (see https://hackage.haskell.org/package/pandoc-pyplot-2.3.0.1#readme)</p>
+<p>When <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">p=0.5</annotation></semantics></math>, the Entropy maxes-out at 1.</p>
+<aside class="notes">
+<p>Bring that back to earlier when we said that 1 bit of data contains 1 bit of information if the probability of it being 1 or 0 was 0.5, this is why!</p>
+</aside>
+</section>
+<section id="more" class="slide level3">
+<h3>More</h3>
+<ul>
+<li>Joint Entropy</li>
+<li>Conditional Entropy of Ensembles</li>
+<li>Chain Rule for Entropy</li>
+<li>Mutual Information</li>
+<li>Kullback-Leibler Distance and Fano’s Inequality</li>
+</ul>
+</section></section>
+<section>
+<section id="source-coding" class="title-slide slide level2">
+<h2>Source Coding</h2>
+
+</section>
+<section class="slide level3">
+
+<p>We can model a stream of symbols as a “Markov Process”.</p>
 </section></section>
 <section>
 <section id="the-end" class="title-slide slide level2">

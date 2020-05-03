@@ -30,19 +30,12 @@ Understanding the movement and transformation of information through mathematica
 Widely Applicable! (Sneak Peak):
 
   - Compression (duh!)
-
   - Communications and Networking (duh!)
-
   - Data Oriented Design
-
   - Security
-
   - Machine Learning (huh?)
-
   - Compute Vision (huh?)
-
   - Computer Graphics (huh!?)
-
   - ^^ Almost Everything in Computer Science
 
 ::: notes
@@ -58,9 +51,7 @@ We will be delving into the more interesting links later
 ### What Contains?
 
   - Foundations: Intro, Bayes, Entropy, Shannon's Theorems
-
   - Applications: Codes, Sampling, Compression
-
   - Relations: DoD, Security, ML, Graphics
 
 *Not* a mathematically rigorous presentation!
@@ -202,6 +193,43 @@ $$H = - \sum\limits_i p_i log_2(p_i)$$
 TODO: Intuition
 
 :::
+
+### Intition
+
+Given one "bit" of data $b$ where $b=1$ with probability $p$ (and $0$ otherwise).
+
+As $p$ ranges from $0$ to $1$:
+
+TODO(Make Graph). (see https://hackage.haskell.org/package/pandoc-pyplot-2.3.0.1#readme)
+
+When $p=0.5$, the Entropy maxes-out at 1.
+
+::: notes
+
+Bring that back to earlier when we said that 1 bit of data contains 1 bit of information if the probability of it being 1 or 0 was 0.5, this is why!
+
+:::
+
+
+### More
+
+- Joint Entropy
+- Conditional Entropy of Ensembles
+- Chain Rule for Entropy
+- Mutual Information
+- Kullback-Leibler Distance and Fano's Inequality
+
+
+
+## Source Coding
+
+---
+
+We can model a stream of symbols as a "Markov Process". 
+
+
+
+
 
 ## The End
 
