@@ -34,7 +34,7 @@ Widely Applicable! (Sneak Peak):
   - Data Oriented Design
   - Security
   - Machine Learning (huh?)
-  - Compute Vision (huh?)
+  - Computer Vision (huh?)
   - Computer Graphics (huh!?)
   - ^^ Almost Everything in Computer Science
 
@@ -78,7 +78,9 @@ The less probable an event is, the more information it contains when it happens.
 
 ---
 
-### 1 Bit of Data vs 1 Bit of Information
+### 1 Bit != 1 Bit
+
+1 Bit of Data is not 1 Bit of Information.
 
 We can say that 1 Bit of Data contains 1 Bit of Information if the probability of that Bit being 1 or 0 is 0.5.
 
@@ -286,8 +288,10 @@ The efficiency $\mu$ of our coding is $\mu=\frac{H}{R}$:
 
 $$\mu=1.75/2=0.875$$
 
-:::
+::: notes
+
 The implication is that a coding *should* exist that itself has a coding rate $R=H$, and if we can find-it, it will be optimal.
+
 :::
 
 ---
@@ -349,6 +353,83 @@ Good compression systems are as much about trying to accurately *discern* the en
 - Huffman Codes & Huffman Trees
 - Kraft-McMillan Inequality
 - Markov Chains
+
+
+
+## Noise and Error Correction
+
+---
+
+### Binary-Symmetric Channels
+
+Generically, channel... (put in som) TODO
+
+---
+
+### Channel Capacity
+
+TODO
+
+---
+
+
+### Shannon's Channel Coding Theorem
+
+TODO
+
+
+---
+
+### Hamming Code
+
+TODO
+
+---
+
+### Error-Correcting Codes
+
+TODO
+
+---
+
+### Further Noise and Error-Correction Reading
+
+TODO
+
+
+
+
+
+## Compression
+
+---
+
+### TODO Compression
+
+
+
+
+## Relations
+
+---
+
+
+### Original List
+
+  - Compression (duh!)
+  - Communications and Networking (duh!)
+  - Data Oriented Design
+  - Security
+  - Machine Learning (huh?)
+  - Computer Vision (huh?)
+  - Computer Graphics (huh!?)
+  - ^^ Almost Everything in Computer Science
+
+
+### TODO How these all relate
+
+
+
 
 
 ## The End
