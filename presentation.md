@@ -446,15 +446,17 @@ TODO
 
 ---
 
+### Social Media
+
+Subscribe to our [YouTube Channel](https://www.youtube.com/channel/UCahevy2N_tj_ZOdsByl9L-A)!
+
+More talks available! Chips! Git!
+
+---
+
 ### References
 
 ::: {#refs}
 :::
 
 
-
-## Social Media
-
-Subscribe to our YouTube Channel!
-
-More talks available!
