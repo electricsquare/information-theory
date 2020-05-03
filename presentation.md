@@ -155,6 +155,8 @@ Information Theory is about quantitatively analysing the amount of information g
 
 ---
 
+### Event Information
+
 The information $I$ contained within an event is:
 
 $$I = \log_2(p)$$
@@ -235,9 +237,63 @@ Bring that back to earlier when we said that 1 bit of data contains 1 bit of inf
 
 
 
-## Source Coding
+## Source-Coding
 
 ---
+
+### Codes
+
+Stream of data can produce $A$, $B$, $C$ and $D$, with:
+
+- $p(A)=\frac{1}{2}$
+- $p(B)=\frac{1}{4}$
+- $p(C)=\frac{1}{8}$
+- $p(D)=\frac{1}{8}$
+
+---
+
+### Encoding as Binary
+
+A naive fixed-length code might look like this:
+
+- $A = 00$
+- $B = 01$
+- $C = 10$
+- $D = 11$
+
+This has a fixed *code rate*, $R=2$
+::: notes
+
+TODO: Convert this to a tables=
+:::
+
+---
+
+### Entropy of the system
+
+- $H=...$
+- $=H(A)+H(B)+H(C)+H(D)$
+- $=-\frac{1}{2}-\frac{1}{4}2-\frac{1}{8}3-\frac{1}{8}3$
+- $=-\frac{1}{2}-\frac{1}{2}-\frac{3}{8}-\frac{3}{8}$
+- $=-1.75$
+
+---
+
+### Coding Efficiency
+
+The efficiency $\mu$ of coding is $\mu=\frac{H}{R}$:
+
+$$\mu=1.75/2=0.875$$
+
+---
+
+### Shannon's Source-Coding Theorem
+
+*You can compress a stream of data with entropy $H$ into a code whose rate $R$ approaches $H$ in the limit, but you can't have a code rate $R < H$ without loss of information.*
+
+---
+
+### Markov Process
 
 We can model a stream of symbols as a "Markov Process". 
 
