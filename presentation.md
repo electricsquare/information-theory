@@ -342,7 +342,13 @@ This is unfortunately the limits we will get to with lossless compression, but y
 Good compression systems are as much about trying to accurately *discern* the entropy of each symbol for the target recipient.
 :::
 
+---
 
+### Further Coding Reading
+
+- Huffman Codes & Huffman Trees
+- Kraft-McMillan Inequality
+- Markov Chains
 
 
 ## The End
