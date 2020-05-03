@@ -1,6 +1,18 @@
 ---
 title: Information Theory
 author: Tom Read Cutting
+references:
+  - id: DaugmanJohn2016
+    author:
+      - family: Daugman
+        given: John
+    title: 'Information Theory'
+    issued:
+      date-parts:
+      - - 2016
+    URL: https://www.cl.cam.ac.uk/teaching/1617/InfoTheory/materials.html
+nocite: |
+  @DaugmanJohn2016
 ---
 
 ### What Is?
@@ -109,7 +121,7 @@ If we know the probability of Alice buying ketchup given that she's bought a hot
 
 ---
 
-### Sum Rule 
+### Sum Rule
 
 If the probability of A is affected by the outcome of a number of events *B*
 
@@ -125,7 +137,7 @@ If we know the probability that Bob will beat Alice when starting with whites, a
 
 ---
 
-### Bayes Theorem
+### Bayes' Theorem
 
 Super-duper important, we aren't going to derive it, but have a look at this majestic thing:
 
@@ -135,4 +147,20 @@ $$p(B|A) = \frac{p(A|B)(p(B)}{p(A)}$$
 
 Derived from the product and sum rules.
 
+:::
+
+---
+
+### Relation to Information Theory
+
+Bayes' Theorem can be applied recursively to let us use the latest posterior as a new *prior* so interpret the next set of data.
+
+Information Theory
+
+
+
+
+## References
+
+::: {#refs}
 :::
