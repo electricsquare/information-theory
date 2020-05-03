@@ -1,5 +1,6 @@
 ---
-title: Information Theory
+title: How Information Works
+subtitle: Clickbait "1 Bit ≠ 1 Bit!?"
 author: Tom Read Cutting
 references:
   - id: DaugmanJohn2016
@@ -78,7 +79,7 @@ The less probable an event is, the more information it contains when it happens.
 
 ---
 
-### 1 Bit != 1 Bit
+### 1 Bit ≠ 1 Bit
 
 1 Bit of Data is not 1 Bit of Information.
 
