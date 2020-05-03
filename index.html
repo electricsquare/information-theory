@@ -40,16 +40,18 @@
   <p class="author">Tom Read Cutting</p>
 </section>
 
-<section id="what-is" class="slide level3">
-<h3>What Is?</h3>
+<section class="slide level2">
+
+<h3 id="what-is">What Is?</h3>
 <p>Understanding the movement and transformation of information through mathematical and physical laws, addressing and answering two fundamental questions:</p>
 <ol type="1">
 <li><p>How can much can you compress data? (The entropy of the data, H).</p></li>
 <li><p>At which rate can you reliable communicate through a channel? (The channel capacity, C).</p></li>
 </ol>
 </section>
-<section id="why-do" class="slide level3">
-<h3>Why Do?</h3>
+<section class="slide level2">
+
+<h3 id="why-do">Why Do?</h3>
 <p>Widely Applicable! (Sneak Peak):</p>
 <ul>
 <li>Compression (duh!)</li>
@@ -66,8 +68,9 @@
 <p>We will be delving into the more interesting links later</p>
 </aside>
 </section>
-<section id="what-contains" class="slide level3">
-<h3>What Contains?</h3>
+<section class="slide level2">
+
+<h3 id="what-contains">What Contains?</h3>
 <ul>
 <li>Foundations: Intro, Bayes, Entropy, Shannon’s Theorems</li>
 <li>Applications: Codes, Sampling, Compression</li>
@@ -75,37 +78,38 @@
 </ul>
 <p><em>Not</em> a mathematically rigorous presentation! Arguments rely on intuition, <em>not</em> formal proof. User-friendly <em>not</em> technically precise.</p>
 </section>
-<section>
-<section id="foundations" class="title-slide slide level2">
+<section id="foundations" class="slide level2">
 <h2>Foundations</h2>
-
 </section>
-<section id="data-is-not-information" class="slide level3">
-<h3>Data Is Not Information</h3>
+<section class="slide level2">
+
+<h3 id="data-is-not-information">Data Is Not Information</h3>
 <p>Intuition: A new hard drive has 1,000,000,000,000 bits of data, but not 1,000,000,000,000.</p>
 <p>Is there a difference between a 0-initialized hard drive, and a randomly-initialized hard drive in terms of information?</p>
 </section>
-<section id="probabilities-matter" class="slide level3">
-<h3>Probabilities Matter</h3>
+<section class="slide level2">
+
+<h3 id="probabilities-matter">Probabilities Matter</h3>
 <p>The less probable an event is, the more information it contains when it happens.</p>
 </section>
-<section id="bit-1-bit" class="slide level3">
-<h3>1 Bit != 1 Bit</h3>
+<section class="slide level2">
+
+<h3 id="bit-1-bit">1 Bit != 1 Bit</h3>
 <p>1 Bit of Data is not 1 Bit of Information.</p>
 <p>We can say that 1 Bit of Data contains 1 Bit of Information if the probability of that Bit being 1 or 0 is 0.5.</p>
 </section>
-<section id="knowledge-affects-information" class="slide level3">
-<h3>Knowledge Affects Information</h3>
+<section class="slide level2">
+
+<h3 id="knowledge-affects-information">Knowledge Affects Information</h3>
 <p>Intuitively, past events affect the probabilities by which we predict future events.</p>
 <p>In othr wrds, yo cn rd ths sntnce evn wth mssng lttrs.</p>
-</section></section>
-<section>
-<section id="some-probability" class="title-slide slide level2">
-<h2>Some Probability</h2>
-
 </section>
-<section id="product-rule" class="slide level3">
-<h3>Product Rule</h3>
+<section id="some-probability" class="slide level2">
+<h2>Some Probability</h2>
+</section>
+<section class="slide level2">
+
+<h3 id="product-rule">Product Rule</h3>
 <p>The probability that both <em>A</em> and <em>B</em> will happen:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="prefix">|</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="prefix">|</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(A,B) = p(A|B)p(B) = p(B|A)p(A)</annotation></semantics></math></p>
 <p>Example: The Probability that Alice will buy a hot dog <em>and</em> ketchup?</p>
@@ -113,8 +117,9 @@
 <p>If we know the probability of Alice buying ketchup given that she’s bought a hot dog. <em>And</em> we know how likely she is to buy a hot dog. Then we know how likely <em>both</em> are to happen.</p>
 </aside>
 </section>
-<section id="sum-rule" class="slide level3">
-<h3>Sum Rule</h3>
+<section class="slide level2">
+
+<h3 id="sum-rule">Sum Rule</h3>
 <p>If the probability of A is affected by the outcome of a number of events <em>B</em></p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>∑</mo><mi>B</mi></munder><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>∑</mo><mi>B</mi></munder><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="prefix">|</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(A) = \sum\limits_{B} p(A,B) = \sum_{B} p(A|B)p(B)</annotation></semantics></math></p>
 <p>Example: The Probability that Bob will beat Alice at chess.</p>
@@ -122,41 +127,41 @@
 <p>If we know the probability that Bob will beat Alice when starting with whites, and the probability that Bob will beat Alice when starting with blacks - then we know the probability that Bob will beat Alice if we know how likely he is to start with either of those colours.</p>
 </aside>
 </section>
-<section id="bayes-theorem" class="slide level3">
-<h3>Bayes’ Theorem</h3>
+<section class="slide level2">
+
+<h3 id="bayes-theorem">Bayes’ Theorem</h3>
 <p>Super-duper important, we aren’t going to derive it, but have a look at this majestic thing:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="prefix">|</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="prefix">|</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">p(B|A) = \frac{p(A|B)(p(B)}{p(A)}</annotation></semantics></math></p>
 <aside class="notes">
 <p>Derived from the product and sum rules.</p>
 </aside>
 </section>
-<section id="relation-to-information-theory" class="slide level3">
-<h3>Relation to Information Theory</h3>
+<section class="slide level2">
+
+<h3 id="relation-to-information-theory">Relation to Information Theory</h3>
 <p>Bayes’ Theorem can be applied recursively to let us use the latest posterior as a new <em>prior</em> so interpret the next set of data.</p>
 <p>Information Theory is about quantitatively analysing the amount of information gained (via analysing reduced uncertainty) using Bayes’ Theorem.</p>
-</section></section>
-<section>
-<section id="entropy" class="title-slide slide level2">
-<h2>Entropy</h2>
-
 </section>
-<section id="event-information" class="slide level3">
-<h3>Event Information</h3>
+<section id="entropy" class="slide level2">
+<h2>Entropy</h2>
+</section>
+<section class="slide level2">
+
+<h3 id="event-information">Event Information</h3>
 <p>The information <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> contained within an event is:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><msub><mo>log</mo><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">I = \log_2(p)</annotation></semantics></math></p>
 <p>Where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> is the probability of that event occurring.</p>
 <p>Entropy, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mo>−</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">H = -I</annotation></semantics></math> is the the amount of uncertainty.</p>
 </section>
-<section id="adding-information" class="slide level3">
-<h3>Adding Information</h3>
+<section class="slide level2">
+
+<h3 id="adding-information">Adding Information</h3>
 <p>For independent <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mrow><mi>a</mi><mi>b</mi></mrow></msub><mo>=</mo><msub><mo>log</mo><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mi>a</mi></msub><msub><mi>p</mi><mi>b</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mo>log</mo><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msub><mo>log</mo><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mi>b</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>I</mi><mi>a</mi></msub><mo>+</mo><msub><mi>I</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">I_{ab} = \log_2(p_a p_b) = \log_2(p_a) + \log_2(p_b) = I_a + I_b</annotation></semantics></math></p>
 <aside class="notes">
 <p>By defining information in terms of the logarithms of the underlying probabilities involved, we can “add” information together to get the total information gain of two events.</p>
 </aside>
-</section>
-<section id="entropy-of-ensembles" class="slide level3">
-<h3>Entropy of Ensembles</h3>
+<h3 id="entropy-of-ensembles">Entropy of Ensembles</h3>
 <p>If you have non-uniform ensemble of probabilities such that:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>p</mi><mi>i</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sum\limits_i p_i = 1 </annotation></semantics></math></p>
 <p>Then:</p>
@@ -164,9 +169,7 @@
 <aside class="notes">
 <p>TODO: Intuition</p>
 </aside>
-</section>
-<section id="intuition" class="slide level3">
-<h3>Intuition</h3>
+<h3 id="intuition">Intuition</h3>
 <p>Bit, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">b=1</annotation></semantics></math> with probability <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> (and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math> otherwise):</p>
 <figure>
 <img data-src="plots/-7848711143247016804.svg" class="matplotlib" height="200" alt="" /><figcaption><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo>−</mo><mi>p</mi><msub><mo>log</mo><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo><msub><mo>log</mo><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">H(p)=-p\log_2(p)-(1-p)\log_2(1-p)</annotation></semantics></math></figcaption>
@@ -175,9 +178,7 @@
 <aside class="notes">
 <p>Bring that back to earlier when we said that 1 bit of data contains 1 bit of information if the probability of it being 1 or 0 was 0.5, this is why!</p>
 </aside>
-</section>
-<section id="further-entropy-reading" class="slide level3">
-<h3>Further Entropy Reading</h3>
+<h3 id="further-entropy-reading">Further Entropy Reading</h3>
 <ul>
 <li>Joint Entropy</li>
 <li>Conditional Entropy of Ensembles</li>
@@ -185,14 +186,13 @@
 <li>Mutual Information</li>
 <li>Kullback-Leibler Distance and Fano’s Inequality</li>
 </ul>
-</section></section>
-<section>
-<section id="source-coding" class="title-slide slide level2">
-<h2>Source-Coding</h2>
-
 </section>
-<section id="codes" class="slide level3">
-<h3>Codes</h3>
+<section id="source-coding" class="slide level2">
+<h2>Source-Coding</h2>
+</section>
+<section class="slide level2">
+
+<h3 id="codes">Codes</h3>
 <p>Stream of data can produce <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>, with:</p>
 <ul>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">p(A)=\frac{1}{2}</annotation></semantics></math></li>
@@ -201,8 +201,9 @@
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mn>1</mn><mn>8</mn></mfrac></mrow><annotation encoding="application/x-tex">p(D)=\frac{1}{8}</annotation></semantics></math></li>
 </ul>
 </section>
-<section id="encoding-as-binary" class="slide level3">
-<h3>Encoding as Binary</h3>
+<section class="slide level2">
+
+<h3 id="encoding-as-binary">Encoding as Binary</h3>
 <p>A naive code might look like this:</p>
 <ul>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mn>00</mn></mrow><annotation encoding="application/x-tex">A = 00</annotation></semantics></math></li>
@@ -215,8 +216,9 @@
 <p>TODO: Convert this to a tables=</p>
 </aside>
 </section>
-<section id="entropy-of-the-system" class="slide level3">
-<h3>Entropy of the system</h3>
+<section class="slide level2">
+
+<h3 id="entropy-of-the-system">Entropy of the system</h3>
 <ul>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mi>.</mi><mi>.</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">H=...</annotation></semantics></math></li>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">=H(A)+H(B)+H(C)+H(D)</annotation></semantics></math></li>
@@ -225,16 +227,18 @@
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mo>−</mo><mn>1.75</mn></mrow><annotation encoding="application/x-tex">=-1.75</annotation></semantics></math></li>
 </ul>
 </section>
-<section id="coding-efficiency" class="slide level3">
-<h3>Coding Efficiency</h3>
+<section class="slide level2">
+
+<h3 id="coding-efficiency">Coding Efficiency</h3>
 <p>The efficiency <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>μ</mi><annotation encoding="application/x-tex">\mu</annotation></semantics></math> of our coding is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mfrac><mi>H</mi><mi>R</mi></mfrac></mrow><annotation encoding="application/x-tex">\mu=\frac{H}{R}</annotation></semantics></math>:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>1.75</mn><mi>/</mi><mn>2</mn><mo>=</mo><mn>0.875</mn></mrow><annotation encoding="application/x-tex">\mu=1.75/2=0.875</annotation></semantics></math></p>
 <aside class="notes">
 <p>The implication is that a coding <em>should</em> exist that itself has a coding rate <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">R=H</annotation></semantics></math>, and if we can find-it, it will be optimal.</p>
 </aside>
 </section>
-<section id="variable-length-coding" class="slide level3">
-<h3>Variable-Length Coding</h3>
+<section class="slide level2">
+
+<h3 id="variable-length-coding">Variable-Length Coding</h3>
 <p>Now imagine:</p>
 <ul>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A = 0</annotation></semantics></math></li>
@@ -251,12 +255,14 @@
 </aside>
 </div>
 </section>
-<section id="shannons-source-coding-theorem" class="slide level3">
-<h3>Shannon’s Source-Coding Theorem</h3>
+<section class="slide level2">
+
+<h3 id="shannons-source-coding-theorem">Shannon’s Source-Coding Theorem</h3>
 <p><em>You can compress a stream of data with entropy <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math> into a code whose rate <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>R</mi><annotation encoding="application/x-tex">R</annotation></semantics></math> approaches <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>H</mi><annotation encoding="application/x-tex">H</annotation></semantics></math> in the limit, but you can’t have a code rate <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>&lt;</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">R &lt; H</annotation></semantics></math> without loss of information.</em></p>
 </section>
-<section id="on-fixed-probabilities" class="slide level3">
-<h3>On Fixed Probabilities</h3>
+<section class="slide level2">
+
+<h3 id="on-fixed-probabilities">On Fixed Probabilities</h3>
 <p>Probabilities in symbol streams rarely fixed</p>
 <ul>
 <li>Could be affected by previous symbol (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo stretchy="false" form="prefix">|</mo><mi>Q</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(U|Q)</annotation></semantics></math> is high!)</li>
@@ -269,58 +275,62 @@
 <p>Good compression systems are as much about trying to accurately <em>discern</em> the entropy of each symbol for the target recipient.</p>
 </aside>
 </section>
-<section id="further-coding-reading" class="slide level3">
-<h3>Further Coding Reading</h3>
+<section class="slide level2">
+
+<h3 id="further-coding-reading">Further Coding Reading</h3>
 <ul>
 <li>Huffman Codes &amp; Huffman Trees</li>
 <li>Kraft-McMillan Inequality</li>
 <li>Markov Chains</li>
 </ul>
-</section></section>
-<section>
-<section id="noise-and-error-correction" class="title-slide slide level2">
+</section>
+<section id="noise-and-error-correction" class="slide level2">
 <h2>Noise and Error Correction</h2>
+</section>
+<section class="slide level2">
 
+<h3 id="binary-symmetric-channels">Binary-Symmetric Channels</h3>
+<p>Generically, channel… (put in some) TODO</p>
 </section>
-<section id="binary-symmetric-channels" class="slide level3">
-<h3>Binary-Symmetric Channels</h3>
-<p>Generically, channel… (put in som) TODO</p>
-</section>
-<section id="channel-capacity" class="slide level3">
-<h3>Channel Capacity</h3>
+<section class="slide level2">
+
+<h3 id="channel-capacity">Channel Capacity</h3>
 <p>TODO</p>
 </section>
-<section id="shannons-channel-coding-theorem" class="slide level3">
-<h3>Shannon’s Channel Coding Theorem</h3>
+<section class="slide level2">
+
+<h3 id="shannons-channel-coding-theorem">Shannon’s Channel Coding Theorem</h3>
 <p>TODO</p>
 </section>
-<section id="hamming-code" class="slide level3">
-<h3>Hamming Code</h3>
+<section class="slide level2">
+
+<h3 id="hamming-code">Hamming Code</h3>
 <p>TODO</p>
 </section>
-<section id="error-correcting-codes" class="slide level3">
-<h3>Error-Correcting Codes</h3>
+<section class="slide level2">
+
+<h3 id="error-correcting-codes">Error-Correcting Codes</h3>
 <p>TODO</p>
 </section>
-<section id="further-noise-and-error-correction-reading" class="slide level3">
-<h3>Further Noise and Error-Correction Reading</h3>
+<section class="slide level2">
+
+<h3 id="further-noise-and-error-correction-reading">Further Noise and Error-Correction Reading</h3>
 <p>TODO</p>
-</section></section>
-<section>
-<section id="compression" class="title-slide slide level2">
+</section>
+<section id="compression" class="slide level2">
 <h2>Compression</h2>
-
 </section>
-<section id="todo-compression" class="slide level3">
-<h3>TODO Compression</h3>
-</section></section>
-<section>
-<section id="relations" class="title-slide slide level2">
+<section class="slide level2">
+
+<h3 id="todo-compression">TODO Compression</h3>
+<p>TODO</p>
+</section>
+<section id="relations" class="slide level2">
 <h2>Relations</h2>
-
 </section>
-<section id="original-list" class="slide level3">
-<h3>Original List</h3>
+<section class="slide level2">
+
+<h3 id="original-list">Original List</h3>
 <ul>
 <li>Compression (duh!)</li>
 <li>Communications and Networking (duh!)</li>
@@ -332,30 +342,36 @@
 <li>^^ Almost Everything in Computer Science</li>
 </ul>
 </section>
-<section id="todo-how-these-all-relate" class="slide level3">
-<h3>TODO How these all relate</h3>
-</section></section>
-<section>
-<section id="the-end" class="title-slide slide level2">
-<h2>The End</h2>
+<section class="slide level2">
 
+<h3 id="todo-how-these-all-relate">TODO How these all relate</h3>
 </section>
-<section id="special-thanks" class="slide level3">
-<h3>Special Thanks</h3>
+<section id="the-end" class="slide level2">
+<h2>The End</h2>
+</section>
+<section class="slide level2">
+
+<h3 id="special-thanks">Special Thanks</h3>
 <ul>
 <li>Professor John Daugman for teaching this course at University.</li>
 <li>Alastair Toft &amp; AJ Weeks for ideas bouncing and feedback.</li>
 <li>Huw Bowles for organising these talks and providing invaluable feedback.</li>
 </ul>
 </section>
-<section id="references" class="slide level3">
-<h3>References</h3>
+<section class="slide level2">
+
+<h3 id="references">References</h3>
 <div id="refs" class="references hanging-indent" role="doc-bibliography">
 <div id="ref-DaugmanJohn2016">
 <p>Daugman, John. 2016. “Information Theory.” <a href="https://www.cl.cam.ac.uk/teaching/1617/InfoTheory/materials.html">https://www.cl.cam.ac.uk/teaching/1617/InfoTheory/materials.html</a>.</p>
 </div>
 </div>
-</section></section>
+</section>
+<section id="social-media" class="slide level2">
+<h2>Social Media</h2>
+<p>Subscribe to our YouTube Channel!</p>
+<p>More talks available!</p>
+</section>
     </div>
   </div>
 

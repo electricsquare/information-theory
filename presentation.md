@@ -362,7 +362,7 @@ Good compression systems are as much about trying to accurately *discern* the en
 
 ### Binary-Symmetric Channels
 
-Generically, channel... (put in som) TODO
+Generically, channel... (put in some) TODO
 
 ---
 
@@ -406,6 +406,8 @@ TODO
 
 ### TODO Compression
 
+TODO
+
 
 
 
@@ -425,9 +427,9 @@ TODO
   - Computer Graphics (huh!?)
   - ^^ Almost Everything in Computer Science
 
+---
 
 ### TODO How these all relate
-
 
 
 
@@ -448,3 +450,11 @@ TODO
 
 ::: {#refs}
 :::
+
+
+
+## Social Media
+
+Subscribe to our YouTube Channel!
+
+More talks available!
