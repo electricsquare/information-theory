@@ -40,18 +40,16 @@
   <p class="author">Tom Read Cutting</p>
 </section>
 
-<section class="slide level2">
-
-<h3 id="what-is">What Is?</h3>
+<section id="what-is" class="slide level3">
+<h3>What Is?</h3>
 <p>Understanding the movement and transformation of information through mathematical and physical laws, addressing and answering two fundamental questions:</p>
 <ol type="1">
 <li><p>How can much can you compress data? (The entropy of the data, H).</p></li>
 <li><p>At which rate can you reliable communicate through a channel? (The channel capacity, C).</p></li>
 </ol>
 </section>
-<section class="slide level2">
-
-<h3 id="why-do">Why Do?</h3>
+<section id="why-do" class="slide level3">
+<h3>Why Do?</h3>
 <p>Widely Applicable! (Sneak Peak):</p>
 <ul>
 <li><p>Compression (duh!)</p></li>
@@ -68,9 +66,8 @@
 <p>We will be delving into the more interesting links later</p>
 </aside>
 </section>
-<section class="slide level2">
-
-<h3 id="what-contains">What Contains?</h3>
+<section id="what-contains" class="slide level3">
+<h3>What Contains?</h3>
 <ul>
 <li><p>Foundations: Intro, Bayes, Entropy, Shannon’s Theorems</p></li>
 <li><p>Applications: Codes, Sampling, Compression</p></li>
@@ -78,37 +75,36 @@
 </ul>
 <p><em>Not</em> a mathematically rigorous presentation! Arguments rely on intuition, <em>not</em> formal proof. User-friendly <em>not</em> technically precise.</p>
 </section>
-<section id="foundations" class="slide level2">
+<section>
+<section id="foundations" class="title-slide slide level2">
 <h2>Foundations</h2>
-</section>
-<section class="slide level2">
 
-<h3 id="data-is-not-information">Data Is Not Information</h3>
+</section>
+<section id="data-is-not-information" class="slide level3">
+<h3>Data Is Not Information</h3>
 <p>Intuition: A new hard drive has 1,000,000,000,000 bits of data, but not 1,000,000,000,000.</p>
 <p>Is there a difference between a 0-initialized hard drive, and a randomly-initialized hard drive in terms of information?</p>
 </section>
-<section class="slide level2">
-
-<h3 id="probabilities-matter">Probabilities Matter</h3>
+<section id="probabilities-matter" class="slide level3">
+<h3>Probabilities Matter</h3>
 <p>The less probable an event is, the more information it contains when it happens.</p>
 </section>
-<section class="slide level2">
-
-<h3 id="bit-of-data-vs-1-bit-of-information">1 Bit of Data vs 1 Bit of Information</h3>
+<section id="bit-of-data-vs-1-bit-of-information" class="slide level3">
+<h3>1 Bit of Data vs 1 Bit of Information</h3>
 <p>We can say that 1 Bit of Data contains 1 Bit of Information if the probability of that Bit being 1 or 0 is 0.5.</p>
 </section>
-<section class="slide level2">
-
-<h3 id="knowledge-affects-information">Knowledge Affects Information</h3>
+<section id="knowledge-affects-information" class="slide level3">
+<h3>Knowledge Affects Information</h3>
 <p>Intuitively, past events affect the probabilities by which we predict future events.</p>
 <p>In othr wrds, yo cn rd ths sntnce evn wth mssng lttrs.</p>
-</section>
-<section id="some-probability" class="slide level2">
+</section></section>
+<section>
+<section id="some-probability" class="title-slide slide level2">
 <h2>Some Probability</h2>
-</section>
-<section class="slide level2">
 
-<h3 id="product-rule">Product Rule</h3>
+</section>
+<section id="product-rule" class="slide level3">
+<h3>Product Rule</h3>
 <p>The probability that both <em>A</em> and <em>B</em> will happen:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="prefix">|</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="prefix">|</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(A,B) = p(A|B)p(B) = p(B|A)p(A)</annotation></semantics></math></p>
 <p>Example: The Probability that Alice will buy a hot dog <em>and</em> ketchup?</p>
@@ -116,9 +112,8 @@
 <p>If we know the probability of Alice buying ketchup given that she’s bought a hot dog. <em>And</em> we know how likely she is to buy a hot dog. Then we know how likely <em>both</em> are to happen.</p>
 </aside>
 </section>
-<section class="slide level2">
-
-<h3 id="sum-rule">Sum Rule</h3>
+<section id="sum-rule" class="slide level3">
+<h3>Sum Rule</h3>
 <p>If the probability of A is affected by the outcome of a number of events <em>B</em></p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>∑</mo><mi>B</mi></munder><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>∑</mo><mi>B</mi></munder><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="prefix">|</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(A) = \sum\limits_{B} p(A,B) = \sum_{B} p(A|B)p(B)</annotation></semantics></math></p>
 <p>Example: The Probability that Bob will beat Alice at chess.</p>
@@ -126,29 +121,62 @@
 <p>If we know the probability that Bob will beat Alice when starting with whites, and the probability that Bob will beat Alice when starting with blacks - then we know the probability that Bob will beat Alice if we know how likely he is to start with either of those colours.</p>
 </aside>
 </section>
-<section class="slide level2">
-
-<h3 id="bayes-theorem">Bayes’ Theorem</h3>
+<section id="bayes-theorem" class="slide level3">
+<h3>Bayes’ Theorem</h3>
 <p>Super-duper important, we aren’t going to derive it, but have a look at this majestic thing:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="prefix">|</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="prefix">|</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">p(B|A) = \frac{p(A|B)(p(B)}{p(A)}</annotation></semantics></math></p>
 <aside class="notes">
 <p>Derived from the product and sum rules.</p>
 </aside>
 </section>
-<section class="slide level2">
-
-<h3 id="relation-to-information-theory">Relation to Information Theory</h3>
+<section id="relation-to-information-theory" class="slide level3">
+<h3>Relation to Information Theory</h3>
 <p>Bayes’ Theorem can be applied recursively to let us use the latest posterior as a new <em>prior</em> so interpret the next set of data.</p>
-<p>Information Theory</p>
+<p>Information Theory is about quantitatively analysing the amount of information gained (via analysing reduced uncertainty) using Bayes’ Theorem.</p>
+</section></section>
+<section>
+<section id="entropy" class="title-slide slide level2">
+<h2>Entropy</h2>
+
 </section>
-<section id="references" class="slide level2">
-<h2>References</h2>
+<section class="slide level3">
+
+<p>The information <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> contained within an event is:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">I = log_2(p)</annotation></semantics></math></p>
+<p>Where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> is the probability of that event occurring.</p>
+<p>Entropy, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mo>−</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">H = -I</annotation></semantics></math> is the the amount of uncertainty.</p>
+</section>
+<section id="adding-information" class="slide level3">
+<h3>Adding Information</h3>
+<p>For independent <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mrow><mi>a</mi><mi>b</mi></mrow></msub><mo>=</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mi>a</mi></msub><msub><mi>p</mi><mi>b</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mi>a</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mi>b</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mi>I</mi><mi>a</mi></msub><mo>+</mo><msub><mi>I</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">I_{ab} = log_2(p_a p_b) = log_2(p_a) + log_2(p_b) = I_a + I_b</annotation></semantics></math></p>
+<aside class="notes">
+<p>By defining information in terms of the logarithms of the underlying probabilities involved, we can “add” information together to get the total information gain of two events.</p>
+</aside>
+</section>
+<section id="entropy-of-ensembles" class="slide level3">
+<h3>Entropy of Ensembles</h3>
+<p>If you have non-uniform ensemble of probabilities such that:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>p</mi><mi>i</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sum\limits_i p_i = 1 </annotation></semantics></math></p>
+<p>Then:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mo>−</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>p</mi><mi>i</mi></msub><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">H = - \sum\limits_i p_i log_2(p_i)</annotation></semantics></math></p>
+<aside class="notes">
+<p>TODO: Intuition</p>
+</aside>
+</section></section>
+<section>
+<section id="the-end" class="title-slide slide level2">
+<h2>The End</h2>
+
+</section>
+<section id="references" class="slide level3">
+<h3>References</h3>
 <div id="refs" class="references hanging-indent" role="doc-bibliography">
 <div id="ref-DaugmanJohn2016">
 <p>Daugman, John. 2016. “Information Theory.” <a href="https://www.cl.cam.ac.uk/teaching/1617/InfoTheory/materials.html">https://www.cl.cam.ac.uk/teaching/1617/InfoTheory/materials.html</a>.</p>
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

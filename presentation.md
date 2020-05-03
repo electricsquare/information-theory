@@ -155,12 +155,60 @@ Derived from the product and sum rules.
 
 Bayes' Theorem can be applied recursively to let us use the latest posterior as a new *prior* so interpret the next set of data.
 
-Information Theory
+Information Theory is about quantitatively analysing the amount of information gained (via analysing reduced uncertainty) using Bayes' Theorem.
 
 
 
 
-## References
+## Entropy
+
+---
+
+The information $I$ contained within an event is:
+
+$$I = log_2(p)$$
+
+Where $p$ is the probability of that event occurring.
+
+Entropy, $H = -I$ is the the amount of uncertainty.
+
+---
+
+### Adding Information
+
+For independent $a$ and $b$:
+
+$$I_{ab} = log_2(p_a p_b) = log_2(p_a) + log_2(p_b) = I_a + I_b$$
+
+::: notes
+
+By defining information in terms of the logarithms of the underlying probabilities involved, we can "add" information together to get the total information gain of two events.
+
+:::
+
+### Entropy of Ensembles
+
+If you have non-uniform ensemble of probabilities such that:
+
+$$\sum\limits_i p_i = 1 $$
+
+Then:
+
+$$H = - \sum\limits_i p_i log_2(p_i)$$
+
+
+::: notes
+
+TODO: Intuition
+
+:::
+
+## The End
+
+---
+
+
+### References
 
 ::: {#refs}
 :::
