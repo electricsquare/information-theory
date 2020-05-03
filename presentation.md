@@ -157,7 +157,7 @@ Information Theory is about quantitatively analysing the amount of information g
 
 The information $I$ contained within an event is:
 
-$$I = log_2(p)$$
+$$I = \log_2(p)$$
 
 Where $p$ is the probability of that event occurring.
 
@@ -169,7 +169,7 @@ Entropy, $H = -I$ is the the amount of uncertainty.
 
 For independent $a$ and $b$:
 
-$$I_{ab} = log_2(p_a p_b) = log_2(p_a) + log_2(p_b) = I_a + I_b$$
+$$I_{ab} = \log_2(p_a p_b) = \log_2(p_a) + \log_2(p_b) = I_a + I_b$$
 
 ::: notes
 
@@ -185,7 +185,7 @@ $$\sum\limits_i p_i = 1 $$
 
 Then:
 
-$$H = - \sum\limits_i p_i log_2(p_i)$$
+$$H = - \sum\limits_i p_i \log_2(p_i)$$
 
 
 ::: notes
@@ -196,19 +196,27 @@ TODO: Intuition
 
 ### Intuition
 
-Given one "bit" of data $b$ where $b=1$ with probability $p$ (and $0$ otherwise).
+Bit, $b=1$ with probability $p$ (and $0$ otherwise):
 
-As $p$ ranges from $0$ to $1$:
+```{.matplotlib
+  caption="$$H(p)=-p\log_2(p)-(1-p)\log_2(1-p)$$"
+  height="200px"
+  transparent=true
+}
 
-```{.matplotlib}
 import matplotlib.pyplot as plt
+import numpy as np
+import math
 
+entropy = lambda p: p * math.log(p, 2) * -1
+
+p_values = list(np.arange(0.01, 1.00, 0.01))
+hp_values = list(map(lambda p: entropy(p) + entropy(1 -p), p_values))
 plt.figure()
-plt.plot([0,1,2,3,4], [1,2,3,4,5])
-plt.title('This is an example figure')
+plt.plot(p_values, hp_values) 
 ```
 
-When $p=0.5$, the Entropy maxes-out at 1.
+When $p=0.5$, the Entropy maxes-out at 1. 
 
 ::: notes
 
