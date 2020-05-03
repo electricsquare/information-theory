@@ -249,6 +249,13 @@ We can model a stream of symbols as a "Markov Process".
 
 ---
 
+### Special Thanks
+
+- Professor John Daugman for teaching this course at University.
+- Alastair Toft & AJ Weeks for ideas bouncing and feedback.
+- Huw Bowles for organising these talks and providing invaluable feedback.
+
+---
 
 ### References
 
