@@ -46,14 +46,25 @@
 <section id="what-is" class="slide level3">
 <h3>What Is?</h3>
 <p>Understanding the movement and transformation of information through mathematical and physical laws, addressing and answering two fundamental questions:</p>
+<div class="fragment">
 <ol type="1">
-<li><p><strong>How can much can you compress data? (The entropy of the data, H).</strong></p></li>
-<li><p>At which rate can you reliable communicate through a channel? (The channel capacity, C).</p></li>
+<li><strong>How can much can you compress data? (The entropy of the data, H).</strong></li>
 </ol>
+</div>
+<div class="fragment">
+<ol start="2" type="1">
+<li>At which rate can you reliable communicate through a channel? (The channel capacity, C).</li>
+</ol>
+<aside class="notes">
+<p>What is information theory?</p>
+<p>We will only cover the first question. Question two can be saved for further reading, or a later talk…</p>
+</aside>
+</div>
 </section>
 <section id="why-do" class="slide level3">
 <h3>Why Do?</h3>
 <p>Widely Applicable! (Sneak Peak):</p>
+<div class="fragment">
 <ul>
 <li>Compression (duh!)</li>
 <li>Communications and Networking (duh!)</li>
@@ -66,17 +77,29 @@
 </ul>
 <aside class="notes">
 <p>Information Theory has some pretty obvious applications, but hopefully some here will surprise you!</p>
-<p>We will be delving into the more interesting links later</p>
+<p><em>click</em></p>
+<p>We will be delving into the more interesting links later, and go in depth on these.</p>
+<p>Outside of Computer Science, relevant to subjects from linguistics, to physics and how the universe itself works!</p>
+<p>TODO: https://www.youtube.com/watch?v=sMb00lz-IfE</p>
 </aside>
+</div>
 </section>
 <section id="what-contains" class="slide level3">
 <h3>What Contains?</h3>
 <ul>
-<li>Foundations: Intro, Bayes, Entropy, Shannon’s Theorems</li>
-<li>Applications: Codes, Sampling, Compression</li>
+<li>Foundations: Intro, Bayes, Entropy, Shannon’s Source Coding Theorem</li>
+<li>Applications: Codes, Compression</li>
 <li>Relations: DoD, Security, ML, Graphics</li>
 </ul>
-<p><em>Not</em> a mathematically rigorous presentation! Arguments rely on intuition, <em>not</em> formal proof. User-friendly <em>not</em> technically precise.</p>
+<div class="fragment">
+<p><em>Not</em> mathematically rigorous! Arguments rely on intuition, <em>not</em> formal proof. User-friendly, <em>not</em> technically precise.</p>
+<aside class="notes">
+<p>Very high level overview, will give you taste of what doors Information theory opens-up.</p>
+<p>Applicable outside of Computer Science, is important to understanding reality itself! TODO: https://www.youtube.com/watch?v=yWO-cvGETRQ</p>
+<p><em>click</em></p>
+<p>Not maths accurate!</p>
+</aside>
+</div>
 </section>
 <section>
 <section id="foundations" class="title-slide slide level2">
@@ -85,27 +108,83 @@
 </section>
 <section id="data-is-not-information" class="slide level3">
 <h3>Data Is Not Information</h3>
-<p>Intuition: A new hard drive has 1,000,000,000,000 bits of data, but not 1,000,000,000,000.</p>
+<p><strong>Intuition:</strong> A new hard drive has 1,000,000,000,000 bits of data, but not 1,000,000,000,000.</p>
 <p>Is there a difference between a 0-initialized hard drive, and a randomly-initialized hard drive in terms of information?</p>
+<aside class="notes">
+<p>This concept makes sense to use intuitively.</p>
+<p>Answer to question, yes, if you care about the value of the bits on the randomly-initialized hard drive.</p>
+<p>But this does hint an something interesting regarding information…</p>
+</aside>
 </section>
 <section id="probabilities-matter" class="slide level3">
 <h3>Probabilities Matter</h3>
 <p>The less probable an event is, the more information it contains when it happens.</p>
+<aside class="notes">
+<p>Intuition: I tell you my name is Tom, the fact that you were expecting that means that the particular piece of information that I go by that name now isn’t very high.</p>
+<p>However, if I were to tell you that my name is now Geoffrey, that would be more information.</p>
+</aside>
 </section>
 <section id="bit-1-bit" class="slide level3">
 <h3>1 Bit ≠ 1 Bit</h3>
 <p>1 Bit of Data is not 1 Bit of Information.</p>
+<div class="fragment">
 <p>We can say that 1 Bit of Data contains 1 Bit of Information if the probability of that Bit being 1 or 0 is 0.5.</p>
+<aside class="notes">
+<p>Clickbait title! 1 Bit is not 1 Bit?</p>
+<p><em>click</em></p>
+<p>We will expand on what that is later. But this is the core of things like compression algorithms, if the probabilities of any bit in a bit stream being a given value isn’t 0.5 what does that mean?</p>
+<p>You will understand this later.</p>
+</aside>
+</div>
 </section>
 <section id="knowledge-affects-information" class="slide level3">
 <h3>Knowledge Affects Information</h3>
 <p>Intuitively, past events affect the probabilities by which we predict future events.</p>
+<div class="fragment">
 <p>In othr wrds, yo cn rd ths sntnce evn wth mssng lttrs.</p>
+<aside class="notes">
+<p>Here’s intuitively why probability is important</p>
+<p><em>click</em></p>
+<p>The reason why you can read this sentence is because there are probabilies associated with what the missing letters could be, and your brain automatically fills in the gaps with the most likely options.</p>
+<p>I find it awesome that our brains can run super-hardcore bayesian inference like that without us even thinking about it.</p>
+</aside>
+</div>
 </section></section>
 <section>
 <section id="some-probability" class="title-slide slide level2">
 <h2>Some Probability</h2>
-
+<aside class="notes">
+<p>We are going to delve into some probility basics.</p>
+<p>Bear with me as this is imporant to understand, I’m going to go over this thoroughly as it helps a lot. But if you do get lost, I will stick to intuitive explenations for the rest of the talk.</p>
+</aside>
+</section>
+<section id="basic-syntax---pa" class="slide level3">
+<h3>Basic Syntax - <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(A)</annotation></semantics></math></h3>
+<p>For some event <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(A)</annotation></semantics></math> says how likely that event is to occur.</p>
+<div class="fragment">
+<p>In other words, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(A)</annotation></semantics></math> represents the probability that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math> will happen.</p>
+</div>
+<div class="fragment">
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mi>m</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p(um)=1</annotation></semantics></math></p>
+<aside class="notes">
+<p>Read Slide</p>
+<p><em>click</em></p>
+<p>Read Slide</p>
+<p><em>click</em></p>
+<p>If the event is that I will use say “umm” during this talk, then we can say that the probability of “umm”, p(um), is 1.</p>
+</aside>
+</div>
+</section>
+<section id="basic-syntax---pab" class="slide level3">
+<h3>Basic Syntax - <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(A,B)</annotation></semantics></math></h3>
+<p>For events <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(A,B)</annotation></semantics></math> is how likely both events are to happen.</p>
+<div class="fragment">
+<p>Hopefully <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>t</mi><mi>a</mi><mi>l</mi><mi>k</mi><mo>,</mo><mi>s</mi><mi>w</mi><mi>e</mi><mi>a</mi><mi>r</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(talk,swear)</annotation></semantics></math> is low.</p>
+</div>
+</section>
+<section id="basic-syntax---pab-1" class="slide level3">
+<h3>Basic Syntax - <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="prefix">|</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(A|B)</annotation></semantics></math></h3>
+<p>oh no</p>
 </section>
 <section id="product-rule" class="slide level3">
 <h3>Product Rule</h3>
@@ -113,7 +192,8 @@
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="prefix">|</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="prefix">|</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(A,B) = p(A|B)p(B) = p(B|A)p(A)</annotation></semantics></math></p>
 <p>Example: The Probability that Alice will buy a hot dog <em>and</em> ketchup?</p>
 <aside class="notes">
-<p>If we know the probability of Alice buying ketchup given that she’s bought a hot dog. <em>And</em> we know how likely she is to buy a hot dog. Then we know how likely <em>both</em> are to happen.</p>
+<p>If we know the probability of Alice buying ketchup given that she’s bought a hot dog. <em>And</em> we know how likely she is to buy a hot dog. Then we know how likely <em>both</em> are to happen.#</p>
+<p>TODO: https://www.youtube.com/watch?v=_PG-jJKB_do</p>
 </aside>
 </section>
 <section id="sum-rule" class="slide level3">

@@ -30,15 +30,29 @@ nocite: |
 
 Understanding the movement and transformation of information through mathematical and physical laws, addressing and answering two fundamental questions:
 
+. . .
+
   1. **How can much can you compress data? (The entropy of the data, H).**
 
+. . .
+
   2. At which rate can you reliable communicate through a channel? (The channel capacity, C).
+
+::: notes
+
+What is information theory?
+
+We will only cover the first question. Question two can be saved for further reading, or a later talk...
+
+:::
 
 ---
 
 ### Why Do?
 
 Widely Applicable! (Sneak Peak):
+
+. . .
 
   - Compression (duh!)
   - Communications and Networking (duh!)
@@ -53,7 +67,13 @@ Widely Applicable! (Sneak Peak):
 
 Information Theory has some pretty obvious applications, but hopefully some here will surprise you!
 
-We will be delving into the more interesting links later
+*click*
+
+We will be delving into the more interesting links later, and go in depth on these.
+
+Outside of Computer Science, relevant to subjects from linguistics, to physics and how the universe itself works!
+
+TODO: https://www.youtube.com/watch?v=sMb00lz-IfE
 
 :::
 
@@ -61,13 +81,27 @@ We will be delving into the more interesting links later
 
 ### What Contains?
 
-  - Foundations: Intro, Bayes, Entropy, Shannon's Theorems
-  - Applications: Codes, Sampling, Compression
+  - Foundations: Intro, Bayes, Entropy, Shannon's Source Coding Theorem
+  - Applications: Codes, Compression
   - Relations: DoD, Security, ML, Graphics
 
-*Not* a mathematically rigorous presentation!
+. . .
+
+*Not* mathematically rigorous!
 Arguments rely on intuition, *not* formal proof.
-User-friendly *not* technically precise.
+User-friendly, *not* technically precise.
+
+::: notes
+
+Very high level overview, will give you taste of what doors Information theory opens-up.
+
+Applicable outside of Computer Science, is important to understanding reality itself! TODO: https://www.youtube.com/watch?v=yWO-cvGETRQ
+
+*click*
+
+Not maths accurate!
+
+:::
 
 
 
@@ -77,9 +111,19 @@ User-friendly *not* technically precise.
 
 ### Data Is Not Information
 
-Intuition: A new hard drive has 1,000,000,000,000 bits of data, but not 1,000,000,000,000.
+**Intuition:** A new hard drive has 1,000,000,000,000 bits of data, but not 1,000,000,000,000.
 
 Is there a difference between a 0-initialized hard drive, and a randomly-initialized hard drive in terms of information?
+
+::: notes
+
+This concept makes sense to use intuitively.
+
+Answer to question, yes, if you care about the value of the bits on the randomly-initialized hard drive.
+
+But this does hint an something interesting regarding information...
+
+:::
 
 ---
 
@@ -87,13 +131,35 @@ Is there a difference between a 0-initialized hard drive, and a randomly-initial
 
 The less probable an event is, the more information it contains when it happens.
 
+::: notes
+
+Intuition: I tell you my name is Tom, the fact that you were expecting that means that the particular piece of information that I go by that name now isn't very high.
+
+However, if I were to tell you that my name is now Geoffrey, that would be more information.
+
+:::
+
 ---
 
 ### 1 Bit ≠ 1 Bit
 
 1 Bit of Data is not 1 Bit of Information.
 
+. . .
+
 We can say that 1 Bit of Data contains 1 Bit of Information if the probability of that Bit being 1 or 0 is 0.5.
+
+::: notes
+
+Clickbait title! 1 Bit is not 1 Bit?
+
+*click*
+
+We will expand on what that is later. But this is the core of things like compression algorithms, if the probabilities of any bit in a bit stream being a given value isn't 0.5 what does that mean?
+
+You will understand this later.
+
+:::
 
 ---
 
@@ -101,11 +167,78 @@ We can say that 1 Bit of Data contains 1 Bit of Information if the probability o
 
 Intuitively, past events affect the probabilities by which we predict future events.
 
+. . .
+
 In othr wrds, yo cn rd ths sntnce evn wth mssng lttrs.
+
+::: notes
+
+Here's intuitively why probability is important
+
+*click*
+
+The reason why you can read this sentence is because there are probabilies associated with what the missing letters could be, and your brain automatically fills in the gaps with the most likely options.
+
+I find it awesome that our brains can run super-hardcore bayesian inference like that without us even thinking about it.
+
+:::
+
 
 
 
 ## Some Probability
+
+::: notes
+
+We are going to delve into some probility basics.
+
+Bear with me as this is imporant to understand, I'm going to go over this thoroughly as it helps a lot. But if you do get lost, I will stick to intuitive explenations for the rest of the talk.
+
+:::
+
+---
+
+### Basic Syntax - $p(A)$
+
+For some event $A$, $p(A)$ says how likely that event is to occur.
+
+. . .
+
+In other words, $p(A)$ represents the probability that $A$ will happen.
+
+. . .
+
+$p(um)=1$
+
+::: notes
+
+Read Slide
+
+*click*
+
+Read Slide
+
+*click*
+
+If the event is that I will use say "umm" during this talk, then we can say that the probability of "umm", p(um), is 1.
+
+:::
+
+---
+
+### Basic Syntax - $p(A,B)$
+
+For events $A$ and $B$, $p(A,B)$ is how likely both events are to happen.
+
+. . .
+
+Hopefully $p(talk,swear)$ is low.
+
+---
+
+### Basic Syntax - $p(A|B)$
+
+oh no
 
 ---
 
@@ -119,7 +252,9 @@ Example: The Probability that Alice will buy a hot dog *and* ketchup?
 
 ::: notes
 
-If we know the probability of Alice buying ketchup given that she's bought a hot dog. *And* we know how likely she is to buy a hot dog. Then we know how likely *both* are to happen.
+If we know the probability of Alice buying ketchup given that she's bought a hot dog. *And* we know how likely she is to buy a hot dog. Then we know how likely *both* are to happen.#
+
+TODO: https://www.youtube.com/watch?v=_PG-jJKB_do
 
 :::
 
