@@ -2,6 +2,9 @@
 title: How Information Works
 subtitle: Clickbait "1 Bit ≠ 1 Bit!?"
 author: Tom Read Cutting
+title-slide-attributes:
+  data-background-image: img/Information_Slide.png
+css: css/style.css
 references:
   - id: DaugmanJohn2016
     author:
@@ -218,10 +221,10 @@ entropy = lambda p: p * math.log(p, 2) * -1
 p_values = list(np.arange(0.01, 1.00, 0.01))
 hp_values = list(map(lambda p: entropy(p) + entropy(1 -p), p_values))
 plt.figure()
-plt.plot(p_values, hp_values) 
+plt.plot(p_values, hp_values)
 ```
 
-When $p=0.5$, the Entropy maxes-out at 1. 
+When $p=0.5$, the Entropy maxes-out at 1.
 
 ::: notes
 

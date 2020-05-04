@@ -1,0 +1,51 @@
+/*------------------------------------*\
+    TYPOGRAPHY
+\*------------------------------------*/
+
+/* html5 font face */
+
+@font-face {
+    font-family: 'johnston-light';
+    font-weight: 300;
+    font-style: normal;
+    src: url('electricsquare.com/fonts/JohnstonITCStd-Light.eot');
+    src: url('electricsquare.com/fonts/JohnstonITCStd-Light.eot?#iefix') format('embedded-opentype'),
+        url('electricsquare.com/fonts/JohnstonITCStd-Light.woff') format('woff'),
+        url('electricsquare.com/fonts/JohnstonITCStd-Light.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'johnston-bold';
+    font-weight: bold;
+    font-style: normal;
+    src: url('electricsquare.com/fonts/JohnstonITCStd-Bold.eot');
+    src: url('electricsquare.com/fonts/JohnstonITCStd-Bold.eot?#iefix') format('embedded-opentype'),
+        url('electricsquare.com/fonts/JohnstonITCStd-Bold.woff') format('woff'),
+        url('electricsquare.com/fonts/JohnstonITCStd-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'johnston-med';
+    font-weight: 500;
+    font-style: normal;
+    src: url('electricsquare.com/fonts/JohnstonITCStd-Medium.eot');
+    src: url('electricsquare.com/fonts/JohnstonITCStd-Medium.eot?#iefix') format('embedded-opentype'),
+        url('electricsquare.com/fonts/JohnstonITCStd-Medium.woff') format('woff'),
+        url('electricsquare.com/fonts/JohnstonITCStd-Medium.ttf') format('truetype');
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6
+{
+    font-family: 'johnston-bold';
+}
+
+.reveal p
+{
+    font-family: 'johnston-med';
+}

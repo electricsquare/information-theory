@@ -10,4 +10,4 @@ entropy = lambda p: p * math.log(p, 2) * -1
 p_values = list(np.arange(0.01, 1.00, 0.01))
 hp_values = list(map(lambda p: entropy(p) + entropy(1 -p), p_values))
 plt.figure()
-plt.plot(p_values, hp_values) 
+plt.plot(p_values, hp_values)
