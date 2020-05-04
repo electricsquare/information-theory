@@ -32,6 +32,11 @@ body
     background-color: rgb(21, 26, 48);
 }
 
+.reveal a
+{
+    font-family: 'johnston-med';
+}
+
 .reveal h1,
 .reveal h2,
 .reveal h3,
@@ -42,7 +47,20 @@ body
     font-family: 'johnston-bold';
 }
 
-.reveal p
+.reveal p,
+.reveal li,
+.reveal ul,
+.reveal ol
+{
+    font-family: 'johnston-light';
+}
+
+.reveal em
 {
     font-family: 'johnston-med';
+}
+
+.reveal strong
+{
+    font-family: 'johnston-bold';
 }

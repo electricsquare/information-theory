@@ -22,7 +22,7 @@ nocite: |
 
 ---
 
-### {#title-video data-background-video="img/Information_Slide.webm" data-background-size=contain}
+### {#title-video data-background-video="img/Information_Slide.webm" data-background-size=contain data-background-video-loop="loop"}
 
 ---
 
@@ -30,7 +30,7 @@ nocite: |
 
 Understanding the movement and transformation of information through mathematical and physical laws, addressing and answering two fundamental questions:
 
-  1. How can much can you compress data? (The entropy of the data, H).
+  1. **How can much can you compress data? (The entropy of the data, H).**
 
   2. At which rate can you reliable communicate through a channel? (The channel capacity, C).
 
