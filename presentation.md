@@ -694,6 +694,17 @@ Coding covers how different ways of coding the same data can make it more or les
   - Only Simpsons Characters?
 
 
+::: notes
+
+- About finding and encoding probabilities
+- Dictionary-Based, assume what comes before will come again.
+- Run length-encoding, assume things won't change
+- Tom Scott Video Compression
+- Learning Compressors, Give example data, they compress it. (Oodlenetwork compression) TODO
+
+:::
+
+
 
 
 
