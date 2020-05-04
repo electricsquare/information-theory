@@ -502,11 +502,13 @@ TODO: Intuition
 
 ### Intuition
 
-Bit, $b=1$ with probability $p$ (and $0$ otherwise):
+Bit, $b$ with $p_{b=1}=1-p_{b=0}$
+
+. . .
 
 ```{.matplotlib
-  caption="$$H(p)=-p\log_2(p)-(1-p)\log_2(1-p)$$"
-  height="200px"
+  caption="$$H(b)=-p_{b=1}\log_2(p_{b=1})-(1-p_{b=0})\log_2(1-p_{b=0})$$"
+  height="330px"
   transparent=true
 }
 
@@ -519,12 +521,20 @@ entropy = lambda p: p * math.log(p, 2) * -1
 p_values = list(np.arange(0.01, 1.00, 0.01))
 hp_values = list(map(lambda p: entropy(p) + entropy(1 -p), p_values))
 plt.figure()
+plt.xlabel("p(b=1)")
+plt.ylabel("H(b)")
 plt.plot(p_values, hp_values)
 ```
 
 When $p=0.5$, the Entropy maxes-out at 1.
 
 ::: notes
+
+Excuse the inconsistent syntax, it's denser this way.
+
+We are saying that we have a bit *of data* b, that can either be one or zero. And it can only have two values.
+
+. . .
 
 Bring that back to earlier when we said that 1 bit of data contains 1 bit of information if the probability of it being 1 or 0 was 0.5, this is why!
 
@@ -542,6 +552,12 @@ Bring that back to earlier when we said that 1 bit of data contains 1 bit of inf
 
 
 ## Source-Coding
+
+::: notes
+
+This section will explain why we all 1 bit of information, a 'bit'.
+
+:::
 
 ---
 
@@ -658,51 +674,13 @@ Good compression systems are as much about trying to accurately *discern* the en
 
 
 
-## Noise and Error Correction
-
----
-
-### Binary-Symmetric Channels
-
-Generically, channel... (put in some) TODO
-
----
-
-### Channel Capacity
-
-TODO
-
----
-
-
-### Shannon's Channel Coding Theorem
-
-TODO
-
-
----
-
-### Hamming Code
-
-TODO
-
----
-
-### Error-Correcting Codes
-
-TODO
-
----
-
-### Further Noise and Error-Correction Reading
-
-TODO
-
-
-
-
-
 ## Compression
+
+::: notes
+
+Coding covers how different ways of coding the same data can make it more or less efficient, but how does this apply to general-purpose compression?
+
+:::
 
 ---
 

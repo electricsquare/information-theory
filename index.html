@@ -352,14 +352,19 @@
 </section>
 <section id="intuition" class="slide level3">
 <h3>Intuition</h3>
-<p>Bit, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">b=1</annotation></semantics></math> with probability <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> (and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math> otherwise):</p>
+<p>Bit, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math> with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi>b</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mrow><mi>b</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">p_{b=1}=1-p_{b=0}</annotation></semantics></math></p>
+<div class="fragment">
 <figure>
-<img data-src="plots/-6161266816559618684.svg" class="matplotlib" height="200" alt="" /><figcaption><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo>−</mo><mi>p</mi><msub><mo>log</mo><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo><msub><mo>log</mo><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">H(p)=-p\log_2(p)-(1-p)\log_2(1-p)</annotation></semantics></math></figcaption>
+<img data-src="plots/5547008444886439909.svg" class="matplotlib" height="330" alt="" /><figcaption><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo>−</mo><msub><mi>p</mi><mrow><mi>b</mi><mo>=</mo><mn>1</mn></mrow></msub><msub><mo>log</mo><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mrow><mi>b</mi><mo>=</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mrow><mi>b</mi><mo>=</mo><mn>0</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><msub><mo>log</mo><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mrow><mi>b</mi><mo>=</mo><mn>0</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">H(b)=-p_{b=1}\log_2(p_{b=1})-(1-p_{b=0})\log_2(1-p_{b=0})</annotation></semantics></math></figcaption>
 </figure>
 <p>When <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">p=0.5</annotation></semantics></math>, the Entropy maxes-out at 1.</p>
 <aside class="notes">
+<p>Excuse the inconsistent syntax, it’s denser this way.</p>
+<p>We are saying that we have a bit <em>of data</em> b, that can either be one or zero. And it can only have two values.</p>
+<p>. . .</p>
 <p>Bring that back to earlier when we said that 1 bit of data contains 1 bit of information if the probability of it being 1 or 0 was 0.5, this is why!</p>
 </aside>
+</div>
 </section>
 <section id="further-entropy-reading" class="slide level3">
 <h3>Further Entropy Reading</h3>
@@ -374,7 +379,9 @@
 <section>
 <section id="source-coding" class="title-slide slide level2">
 <h2>Source-Coding</h2>
-
+<aside class="notes">
+<p>This section will explain why we all 1 bit of information, a ‘bit’.</p>
+</aside>
 </section>
 <section id="codes" class="slide level3">
 <h3>Codes</h3>
@@ -463,38 +470,11 @@
 </ul>
 </section></section>
 <section>
-<section id="noise-and-error-correction" class="title-slide slide level2">
-<h2>Noise and Error Correction</h2>
-
-</section>
-<section id="binary-symmetric-channels" class="slide level3">
-<h3>Binary-Symmetric Channels</h3>
-<p>Generically, channel… (put in some) TODO</p>
-</section>
-<section id="channel-capacity" class="slide level3">
-<h3>Channel Capacity</h3>
-<p>TODO</p>
-</section>
-<section id="shannons-channel-coding-theorem" class="slide level3">
-<h3>Shannon’s Channel Coding Theorem</h3>
-<p>TODO</p>
-</section>
-<section id="hamming-code" class="slide level3">
-<h3>Hamming Code</h3>
-<p>TODO</p>
-</section>
-<section id="error-correcting-codes" class="slide level3">
-<h3>Error-Correcting Codes</h3>
-<p>TODO</p>
-</section>
-<section id="further-noise-and-error-correction-reading" class="slide level3">
-<h3>Further Noise and Error-Correction Reading</h3>
-<p>TODO</p>
-</section></section>
-<section>
 <section id="compression" class="title-slide slide level2">
 <h2>Compression</h2>
-
+<aside class="notes">
+<p>Coding covers how different ways of coding the same data can make it more or less efficient, but how does this apply to general-purpose compression?</p>
+</aside>
 </section>
 <section id="todo-compression" class="slide level3">
 <h3>TODO Compression</h3>
