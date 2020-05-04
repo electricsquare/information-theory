@@ -314,7 +314,7 @@ $$p(A,B) = p(A|B)p(B) = p(B|A)p(A)$$
 
 Gives us...
 
-. . . 
+. . .
 
 $$p(B|A) = \frac{p(A|B)(p(B)}{p(A)}$$
 
@@ -337,11 +337,11 @@ This is very powerful, because it allows us to reverse the conditions of events.
 
 Imagine a 90% accurate "virus immunity" test.
 
-. . . 
+. . .
 
 Imagine 1% of population is *actually* immune to the virus.
 
-. . . 
+. . .
 
 What is the probability you are immune, if the test is positive?
 
@@ -382,8 +382,8 @@ $$p(I|T)=\frac{p(T|I)p(I)}{p(T)}$$
 
 - $p(T)=...$
 - $=p(T|I)p(I)+p(T|\overline{I})p(\overline{I})$ (sum rule)
-- $=(0.9)(0.01)+(0.1)(0.99)$ 
-- $=0.108$ 
+- $=(0.9)(0.01)+(0.1)(0.99)$
+- $=0.108$
 
 
 ::: notes
@@ -742,7 +742,7 @@ Case Studies
 
 TODO: explain https://youtu.be/rX0ItVEVjHc?t=3064
 
-// TODO: add to references 
+// TODO: add to references
 
 ---
 
@@ -793,6 +793,8 @@ I hope you found this interesting and it has piqued your interest for more on in
 ### Special Thanks
 
 - Professor John Daugman for teaching this course at University.
+- Thomas Van Nuffel for the amazing title slide.
+- Henry Ryder for design feedback and assistance.
 - Alastair Toft & AJ Weeks for ideas bouncing and feedback.
 - Huw Bowles for organising these talks and providing invaluable feedback.
 
