@@ -686,7 +686,19 @@ Coding covers how different ways of coding the same data can make it more or les
 
 ### TODO Compression
 
-TODO
+- We want to find out the best estimate $p(B_{n+1}|B_{0..n})$, for the recipient...
+- Context is key, the more specific you can be the more information you already have.
+  - General purpose?
+  - Images Only?
+  - Cartoons Only?
+  - Only Simpsons Characters?
+
+
+
+
+
+
+## Lossy Compression (TODO) High-Level if time
 
 
 
@@ -698,8 +710,10 @@ TODO
 
 ### Original List
 
+Case Studies
+
   - Compression (duh!)
-  - Communications and Networking (duh!)
+  - Communications and Networking (duh!) (next time)
   - Data Oriented Design
   - Security
   - Machine Learning (huh?)
@@ -711,10 +725,57 @@ TODO
 
 ### TODO How these all relate
 
+---
 
+### Data Oriented Design - CppCon 2014
+
+TODO: explain https://youtu.be/rX0ItVEVjHc?t=3064
+
+// TODO: add to references 
+
+---
+
+### Security - Encryption
+
+TODO
+
+---
+
+### Machine Learning + Computer Graphics - Nvidia's DLSS
+
+TODO Slide On this
+
+
+---
+
+### ~~Computer~~ Vision - How the eye works
+
+---
+
+### Bonus: The Universe Itself!?
+
+::: notes
+
+One of the things that makes Information Theory hold a special place in my heart is the fact that it gives us a really interesting insight into the laws of the Universe itself.
+
+We live in a world that (as far as we know) is trending towards a state of entropy. We have established that no information at all, is the completely uniform and expected, so it seems like more and more information is constantly being added to the Universe within which we live.
+
+Yet, information needs meaning, and in the march towards more entropy, towards more information, it takes work to keep information around. And with channel coding, it takes work to transmit it.
+
+It's fascinating that packing data into the smallest number of bits needed to store useful information takes work, energy, CPU time, electricity. It's even more so that unpacking information from that form requires just as much work - to extract meaning we need to reintroduce redundancy.
+
+This is the foundation for efficiently distributing videos of cats around the internet, yet it's hard not get lost in this when your mind wanders onto the topic.
+
+:::
 
 
 ## The End
+
+::: notes
+
+I hope you found this interesting and it has piqued your interest for more on information theory. There are links in the description for further watching and reading.
+
+:::
 
 ---
 
@@ -743,5 +804,19 @@ More talks available! Chips! Git!
 ### Careers {data-background-color="#000"}
 
 [careers@electricsquare.com](mailto:careers@electricsquare.com)
+
+[https://www.electricsquare.com/careers/](https://www.electricsquare.com/careers/)
+
+::: notes
+
+If you have watched this online and found this interesting, please do consider applying for a job at Electric Square! It's a great place to work.
+
+We have positions open for all levels of programmer, from Junior through to Technical Director, including research and development roles.
+
+Electric Square has studios in Brighton, Leamington Spa, and Singapore.
+
+:::
+
+### Q&A
 
 
