@@ -234,11 +234,31 @@ For events $A$ and $B$, $p(A,B)$ is how likely both events are to happen.
 
 Hopefully $p(talk,swear)$ is low.
 
+::: notes
+
+*click*
+
+Probability I will give this talk *and* swear, is low.
+
+:::
+
 ---
 
 ### Basic Syntax - $p(A|B)$
 
-oh no
+For events $A$ and $B$, $p(A|B)$ is how likely $A$ is to happen, if $B$ has happened.
+
+. . .
+
+$p(swear|stub toe)$ is very high.
+
+::: notes
+
+*click*
+
+Let's hope I don't stub my toe during this talk.
+
+:::
 
 ---
 
@@ -248,9 +268,13 @@ The probability that both *A* and *B* will happen:
 
 $$p(A,B) = p(A|B)p(B) = p(B|A)p(A)$$
 
+. . .
+
 Example: The Probability that Alice will buy a hot dog *and* ketchup?
 
 ::: notes
+
+*click*
 
 If we know the probability of Alice buying ketchup given that she's bought a hot dog. *And* we know how likely she is to buy a hot dog. Then we know how likely *both* are to happen.#
 
@@ -266,9 +290,13 @@ If the probability of A is affected by the outcome of a number of events *B*
 
 $$p(A) = \sum\limits_{B} p(A,B) = \sum_{B} p(A|B)p(B)$$
 
+. . .
+
 Example: The Probability that Bob will beat Alice at chess.
 
 ::: notes
+
+*click*
 
 If we know the probability that Bob will beat Alice when starting with whites, and the probability that Bob will beat Alice when starting with blacks - then we know the probability that Bob will beat Alice if we know how likely he is to start with either of those colours.
 
@@ -278,15 +306,115 @@ If we know the probability that Bob will beat Alice when starting with whites, a
 
 ### Bayes' Theorem
 
-Super-duper important, we aren't going to derive it, but have a look at this majestic thing:
+The Product Rule:
+
+$$p(A,B) = p(A|B)p(B) = p(B|A)p(A)$$
+
+. . .
+
+Gives us...
+
+. . . 
 
 $$p(B|A) = \frac{p(A|B)(p(B)}{p(A)}$$
 
 ::: notes
 
-Derived from the product and sum rules.
+Refresh on product rule
+
+*click*
+
+
+*click*
+
+This is very powerful, because it allows us to reverse the conditions of events.
 
 :::
+
+---
+
+### Close to Home Example
+
+Imagine a 90% accurate "virus immunity" test.
+
+. . . 
+
+Imagine 1% of population is *actually* immune to the virus.
+
+. . . 
+
+What is the probability you are immune, if the test is positive?
+
+. . .
+
+$$p(I|T)$$
+
+::: notes
+
+*click*
+
+*click*
+
+Write down your guess in the comments, your gut feeling.
+
+:::
+
+---
+
+### Test Variables
+
+- $p(I)=0.01$ - Chance you are immune.
+- $p(\overline{I})=0.99$ - Chance you are at risk.
+- $p(T|I)=p(\overline{T}|\overline{I})=0.9$ - Chance tests succeed.
+- $p(\overline{T}|I)=p(T|\overline{I})=0.1$ - Chance tests fail.
+
+::: notes
+
+Stating chances we already know.
+
+:::
+
+### Applying Bayes'
+
+$$p(I|T)=\frac{p(T|I)p(I)}{p(T)}$$
+
+. . .
+
+- $p(T)=...$
+- $=p(T|I)p(I)+p(T|\overline{I})p(\overline{I})$ (sum rule)
+- $=(0.9)(0.01)+(0.1)(0.99)$ 
+- $=0.108$ 
+
+
+::: notes
+
+We need $p(T) then...
+
+*click*
+
+:::
+
+---
+
+### Are You Immune?
+
+$$p(I|T)=\frac{p(T|I)p(I)}{p(T)}=\frac{(0.9)(0.01)}{0.108}=...$$
+
+. . .
+
+$$0.833$$
+
+::: notes
+
+Are you immune? Here's the math!
+
+*click*
+
+You have less than 10% chance of being immune. Even though your test was 90% accurate.
+
+:::
+
+
 
 ---
 
