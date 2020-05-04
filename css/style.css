@@ -35,6 +35,12 @@
         url('electricsquare.com/fonts/JohnstonITCStd-Medium.ttf') format('truetype');
 }
 
+body
+{
+    background: rgb(21, 26, 48);
+    background-color: rgb(21, 26, 48);
+}
+
 .reveal h1,
 .reveal h2,
 .reveal h3,

@@ -1,9 +1,6 @@
 ---
-title: How Information Works
-subtitle: Clickbait "1 Bit ≠ 1 Bit!?"
-author: Tom Read Cutting
-title-slide-attributes:
-  data-background-image: img/Information_Slide.png
+pagetitle: How Information Works
+author-meta: Tom Read Cutting
 css: css/style.css
 references:
   - id: DaugmanJohn2016
@@ -17,6 +14,16 @@ references:
     URL: https://www.cl.cam.ac.uk/teaching/1617/InfoTheory/materials.html
 nocite: |
   @DaugmanJohn2016
+---
+
+---
+
+### { data-background-image="img/Information_Slide.png" data-background-size=contain data-transition=fade}
+
+---
+
+### { data-background-video="img/Information_Slide.webm" data-background-size=contain}
+
 ---
 
 ### What Is?
@@ -462,5 +469,10 @@ More talks available! Chips! Git!
 
 ::: {#refs}
 :::
+
+
+### Careers {data-background-color="#000"}
+
+[careers@electricsquare.com](mailto:careers@electricsquare.com)
 
 
