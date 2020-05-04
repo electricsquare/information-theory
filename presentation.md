@@ -18,11 +18,11 @@ nocite: |
 
 ---
 
-### { data-background-image="img/Information_Slide.png" data-background-size=contain data-transition=fade}
+### {#title data-background-image="img/Information_Slide.png" data-background-size=contain data-background-transition=none}
 
 ---
 
-### { data-background-video="img/Information_Slide.webm" data-background-size=contain}
+### {#title-video data-background-video="img/Information_Slide.webm" data-background-size=contain}
 
 ---
 
