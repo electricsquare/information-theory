@@ -1,6 +1,6 @@
 # Information Theory
 
-[![The logo of Electric Square Ltd.](img/ES-logo-and-wordmark.jpg)](https://www.electricsquare.com/)
+[![The logo of Electric Square Ltd.](es/img/ES-logo-and-wordmark.jpg)](https://www.electricsquare.com/)
 
 Brought to you by [Electric Square](https://www.electricsquare.com/).
 
