@@ -300,7 +300,14 @@
 <section id="relation-to-information-theory" class="slide level3">
 <h3>Relation to Information Theory</h3>
 <p>Bayes’ Theorem can be applied recursively to let us use the latest posterior as a new <em>prior</em> so interpret the next set of data.</p>
+<div class="fragment">
 <p>Information Theory is about quantitatively analysing the amount of information gained (via analysing reduced uncertainty) using Bayes’ Theorem.</p>
+<aside class="notes">
+<p>Bayes’ theorem let’s us estimate the probalities of incoming bits of information</p>
+<p><em>click</em></p>
+<p>Information theory is all about quantiviely analysing that.</p>
+</aside>
+</div>
 </section></section>
 <section>
 <section id="entropy" class="title-slide slide level2">
@@ -309,10 +316,21 @@
 </section>
 <section id="event-information" class="slide level3">
 <h3>Event Information</h3>
-<p>The information <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> contained within an event is:</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><msub><mo>log</mo><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">I = \log_2(p)</annotation></semantics></math></p>
-<p>Where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math> is the probability of that event occurring.</p>
+<p>The information <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> contained within an event <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>E</mi><annotation encoding="application/x-tex">E</annotation></semantics></math> is:</p>
+<div class="fragment">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi><mo>=</mo><msub><mo>log</mo><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">I = \log_2(p(E))</annotation></semantics></math></p>
+<p>Where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>E</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(E)</annotation></semantics></math> is the probability of that event occurring.</p>
+</div>
+<div class="fragment">
 <p>Entropy, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mo>−</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">H = -I</annotation></semantics></math> is the the amount of uncertainty.</p>
+<aside class="notes">
+<p>So, there is an equation for information, and this…</p>
+<p><em>click</em></p>
+<p>So, it seems pretty arbitrary to have this. And also it’s negative. We also talk about Entropy though, which, intuitively, is anti-information so…</p>
+<p><em>click</em></p>
+<p>However, these numbers mean very real things. The next slide will explain why log is useful, but eventually the magic will be revealed…</p>
+</aside>
+</div>
 </section>
 <section id="adding-information" class="slide level3">
 <h3>Adding Information</h3>

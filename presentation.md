@@ -422,9 +422,19 @@ You have less than 10% chance of being immune. Even though your test was 90% acc
 
 Bayes' Theorem can be applied recursively to let us use the latest posterior as a new *prior* so interpret the next set of data.
 
+. . .
+
 Information Theory is about quantitatively analysing the amount of information gained (via analysing reduced uncertainty) using Bayes' Theorem.
 
+::: notes
 
+Bayes' theorem let's us estimate the probalities of incoming bits of information
+
+*click*
+
+Information theory is all about quantiviely analysing that.
+
+:::
 
 
 ## Entropy
@@ -433,13 +443,31 @@ Information Theory is about quantitatively analysing the amount of information g
 
 ### Event Information
 
-The information $I$ contained within an event is:
+The information $I$ contained within an event $E$ is:
 
-$$I = \log_2(p)$$
+. . .
 
-Where $p$ is the probability of that event occurring.
+$$I = \log_2(p(E))$$
+
+Where $p(E)$ is the probability of that event occurring.
+
+. . .
 
 Entropy, $H = -I$ is the the amount of uncertainty.
+
+::: notes
+
+So, there is an equation for information, and this...
+
+*click*
+
+So, it seems pretty arbitrary to have this. And also it's negative. We also talk about Entropy though, which, intuitively, is anti-information so...
+
+*click*
+
+However, these numbers mean very real things. The next slide will explain why log is useful, but eventually the magic will be revealed...
+
+:::
 
 ---
 
