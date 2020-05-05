@@ -721,7 +721,7 @@ Coding covers how different ways of coding the same data can make it more or les
 - Dictionary-Based, assume what comes before will come again.
 - Run length-encoding, assume things won't change
 - Tom Scott Video Compression
-- Learning Compressors, Give example data, they compress it. 
+- Learning Compressors, Give example data, they compress it.
 
 :::
 
@@ -759,11 +759,11 @@ Train compressor for specific-use case.
 
 Really good for images/videos - goal is to throw away information that our eyes tend to naturally discard anyway.
 
-. . . 
+. . .
 
 JPEG uses FFT to achieve this example.
 
-. . . 
+. . .
 
 A broad topic, that can be expanded on at a later date.
 
@@ -790,7 +790,7 @@ Case Studies
 
 ---
 
-### Data-Oriented Design [@ActonMike2014]  
+### Data-Oriented Design [@ActonMike2014]
 
 A strongly recommended talk from CppCon in 2014.
 
@@ -830,7 +830,7 @@ Encryption is all about encoding information so that only someone with the right
 
 Public-key cryptography is a really interesting case.
 
-When you broadcast information encrypted using someone's public key, everyone is receiving that information with the same density. However, only the person with the right corresponding private key can decrypt it. 
+When you broadcast information encrypted using someone's public key, everyone is receiving that information with the same density. However, only the person with the right corresponding private key can decrypt it.
 
 What's fascinating here is that the public key *is* an encoding of the private key - but the work involved to extract that information just requires a lot of energy. All the information you might need to acquire the private key is there, you just can't access it.
 
@@ -870,7 +870,7 @@ Human vision is a wide and broad topic, but our brains and retinas exploit infor
 
 Testing the process going wrong is where it gets interest. Everyone follow these instructions:
 
-Close one eye and focus the other on the appropriate letter (R for right or L for left). Place your eye a distance from the screen approximately equal to three times the distance between the R and the L. Move your eye towards or away from the screen until you notice the other letter disappear. For example, close your right eye, look at the "L" with your left eye, and the "R" will disappear. 
+Close one eye and focus the other on the appropriate letter (R for right or L for left). Place your eye a distance from the screen approximately equal to three times the distance between the R and the L. Move your eye towards or away from the screen until you notice the other letter disappear. For example, close your right eye, look at the "L" with your left eye, and the "R" will disappear.
 
 It's amazing, our brain is filling in the data with what it "expects" to be there with the highest probability, only, it gets it wrong.
 
@@ -942,9 +942,21 @@ More talks available! Chips! Git!
 
 ### Careers {data-background-color="#000"}
 
+::: {style='font-size: 0.7em'}
+
+Electric Square welcomes ambition and talent at every level. With a focus on collaboration we ensure that everyone benefits from a diverse range of skills and experience.
+
+- 150+ staff across 4 projects
+- Brighton, Leamington Spa, Singapore
+- Expertise in Free-To-Play and Live Ops
+- Track record for quality & innovation
+- Experience managing top IP
+
 [careers@electricsquare.com](mailto:careers@electricsquare.com)
 
 [https://www.electricsquare.com/careers/](https://www.electricsquare.com/careers/)
+
+:::
 
 ::: notes
 
