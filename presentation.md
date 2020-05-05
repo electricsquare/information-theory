@@ -834,7 +834,7 @@ Coding covers how different ways of coding the same data can make it more or les
 
 ---
 
-### Dictionary Method - Assume Repeated Patterns
+### Dictionary Method - Assume Repeated Patterns {data-background-image="img/dictionary.jpg" style="color:black; text-shadow: 0px 0px 4px white;"}
 
 (LZW, gif)
 
@@ -844,6 +844,10 @@ Every time a new "word" is encountered, put it in a dictionary. Next time you en
 
 Constructing the "best" dictionary is hard.
 
+. . .
+
+Image Source: [freestocks.org](https://www.pexels.com/@freestocks)
+
 
 ---
 
@@ -851,18 +855,24 @@ Constructing the "best" dictionary is hard.
 
 Assume data will often be repeated, so count number of repeated bytes and store that and first instance.
 
+. . .
+
+$$000000000001111000=(11)0, (4)1, 3(0)$$
+
 ---
 
 ### Learning Compressors
 
 Train compressor for specific-use case.
 
+. . .
+
 [Oodle Network Compression](http://www.radgametools.com/oodlenetwork.htm) does this by building dictionary for network packets ahead-of-time that is shipped with the game.
 
 
 ---
 
-### Lossy Compression
+### Lossy Compression {data-background-image="img/compress_cat.jpg" style="color:white; text-shadow: 0px 0px 4px black;"}
 
 Really good for images/videos - goal is to throw away information that our eyes tend to naturally discard anyway.
 
@@ -874,7 +884,9 @@ JPEG uses FFT to achieve this example.
 
 A broad topic, that can be expanded on at a later date.
 
+. . .
 
+Image Source: [Wikipedia](https://en.wikipedia.org/wiki/Lossy_compression#/media/File:Ruby-HighCompression-Tiny.jpg)
 
 
 ## Relations
