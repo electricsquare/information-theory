@@ -800,6 +800,19 @@ Good compression systems are as much about trying to accurately *discern* the en
 - Kraft-McMillan Inequality
 - Markov Chains
 
+::: notes
+
+
+Huffman Trees let use construct these codes.
+
+The Kraft-McMillian deals with limits on how instaneous codes can exist.
+
+Fascinatingly, you can code an infinate alpahbet this way! Whilst still having 2 bits per symbol on average!
+
+Markov Chains deal with probabilities changing based on previous events using a state machine.
+
+:::
+
 
 
 ## Compression
