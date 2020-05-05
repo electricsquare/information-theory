@@ -462,6 +462,12 @@ Information theory is all about quantiviely analysing that.
 
 ## Entropy
 
+:::
+
+This section will be mostly statements, the intuition and tying this all together will come in the coding section.
+
+:::
+
 ---
 
 ### Event Information
@@ -519,7 +525,9 @@ $$H = - \sum\limits_i p_i \log_2(p_i)$$
 
 ::: notes
 
-TODO: Intuition
+So if you have a probability distribution, we can find out the entropy associated with that distribution.
+
+Remember, entropy is measured in bits! This will tie together nicely, I promise!
 
 :::
 
@@ -581,6 +589,19 @@ Bring that back to earlier when we said that 1 bit of data contains 1 bit of inf
 - Chain Rule for Entropy
 - Mutual Information
 - Kullback-Leibler Distance and Fano's Inequality
+
+::: notes
+
+We can calculate different kinds of entropy under other conditions, so as the entropy of two
+independent random variables and the entropy of variables which are conditional on each other.
+
+We can also do this for ensembles of variables!
+
+Unfortunately we don't have enough time for this.
+
+Mutual information takes this further by letting us know how much one variable gives us information about another.
+
+:::
 
 
 
