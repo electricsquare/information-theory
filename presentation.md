@@ -936,7 +936,7 @@ More talks available! Chips! Git!
 
 ### References
 
-::: {#refs}
+::: {#refs style='font-size: 0.5em'}
 :::
 
 
