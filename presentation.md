@@ -462,7 +462,7 @@ Information theory is all about quantiviely analysing that.
 
 ## Entropy
 
-:::
+::: notes
 
 This section will be mostly statements, the intuition and tying this all together will come in the coding section.
 
