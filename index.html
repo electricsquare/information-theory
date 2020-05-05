@@ -107,7 +107,7 @@
 </section>
 <section id="data-is-not-information" class="slide level3">
 <h3>Data Is Not Information</h3>
-<p><strong>Intuition:</strong> A new hard drive has 1,000,000,000,000 bits of data, but not 1,000,000,000,000.</p>
+<p><strong>Intuition:</strong> A new hard drive has 1,000,000,000,000 bits of data, but not 1,000,000,000,000 bits <em>of information</em>.</p>
 <p>Is there a difference between a 0-initialized hard drive, and a randomly-initialized hard drive in terms of information?</p>
 <aside class="notes">
 <p>This concept makes sense to use intuitively.</p>
@@ -153,8 +153,9 @@
 <section id="some-probability" class="title-slide slide level2">
 <h2>Some Probability</h2>
 <aside class="notes">
-<p>We are going to delve into some probility basics.</p>
-<p>Bear with me as this is imporant to understand, I’m going to go over this thoroughly as it helps a lot. But if you do get lost, I will stick to intuitive explenations for the rest of the talk.</p>
+<p>We are going to delve into some probability basics.</p>
+<p>Bear with me as this is important to understand, I’m going to go over this thoroughly as it helps a lot. But if you do get lost, I will stick to intuitive explanations for the rest of the talk.</p>
+<p>Information Theory is <em>defined by</em> probability, because as we will discover, information <em>is</em> entropy <em>is</em> randomness.</p>
 </aside>
 </section>
 <section id="basic-syntax---pa" class="slide level3">
@@ -348,14 +349,18 @@
 <p>TODO: Intuition</p>
 </aside>
 </section>
-<section id="intuition" class="slide level3">
-<h3>Intuition</h3>
+<section id="intuition-of-entropy" class="slide level3">
+<h3>Intuition of Entropy</h3>
+<div style="font-size: 0.7em">
 <p>Bit, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math> with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi>b</mi><mo>=</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mrow><mi>b</mi><mo>=</mo><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">p_{b=1}=1-p_{b=0}</annotation></semantics></math></p>
+</div>
 <div class="fragment">
+<div style="font-size: 0.7em">
 <figure>
 <img data-src="plots/5547008444886439909.svg" class="matplotlib" height="330" alt="" /><figcaption><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo>−</mo><msub><mi>p</mi><mrow><mi>b</mi><mo>=</mo><mn>1</mn></mrow></msub><msub><mo>log</mo><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mrow><mi>b</mi><mo>=</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mrow><mi>b</mi><mo>=</mo><mn>0</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><msub><mo>log</mo><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>p</mi><mrow><mi>b</mi><mo>=</mo><mn>0</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">H(b)=-p_{b=1}\log_2(p_{b=1})-(1-p_{b=0})\log_2(1-p_{b=0})</annotation></semantics></math></figcaption>
 </figure>
 <p>When <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">p=0.5</annotation></semantics></math>, the Entropy maxes-out at 1.</p>
+</div>
 <aside class="notes">
 <p>Excuse the inconsistent syntax, it’s denser this way.</p>
 <p>We are saying that we have a bit <em>of data</em> b, that can either be one or zero. And it can only have two values.</p>
@@ -383,16 +388,35 @@
 </section>
 <section id="codes" class="slide level3">
 <h3>Codes</h3>
-<p>Stream of data can produce <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>, with:</p>
+<p>Imagine Alice sending Bob <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>B</mi><annotation encoding="application/x-tex">B</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>, with:</p>
+<div>
 <ul>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">p(A)=\frac{1}{2}</annotation></semantics></math></li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow><annotation encoding="application/x-tex">p(B)=\frac{1}{4}</annotation></semantics></math></li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mn>1</mn><mn>8</mn></mfrac></mrow><annotation encoding="application/x-tex">p(C)=\frac{1}{8}</annotation></semantics></math></li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mn>1</mn><mn>8</mn></mfrac></mrow><annotation encoding="application/x-tex">p(D)=\frac{1}{8}</annotation></semantics></math></li>
+<li class="fragment"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">p(A)=\frac{1}{2}</annotation></semantics></math></li>
+<li class="fragment"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow><annotation encoding="application/x-tex">p(B)=\frac{1}{4}</annotation></semantics></math></li>
+<li class="fragment"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mn>1</mn><mn>8</mn></mfrac></mrow><annotation encoding="application/x-tex">p(C)=\frac{1}{8}</annotation></semantics></math></li>
+<li class="fragment"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mfrac><mn>1</mn><mn>8</mn></mfrac></mrow><annotation encoding="application/x-tex">p(D)=\frac{1}{8}</annotation></semantics></math></li>
 </ul>
+</div>
+<div class="fragment">
+<p>Example: DADDBBADAABBAACBDABCAAADC</p>
+<aside class="notes">
+<p>Let’s say Alice is send Bob a sequence letters, “A, B, C &amp; D”.</p>
+<p><em>click</em></p>
+<p>Where the probability she will send A is a half.</p>
+<p><em>click</em></p>
+<p>B is a quarter</p>
+<p><em>click</em></p>
+<p>C is 1/8</p>
+<p><em>click</em></p>
+<p>D is 1/8</p>
+<p><em>click</em></p>
+<p>With an example (generated randomly!)</p>
+</aside>
+</div>
 </section>
 <section id="encoding-as-binary" class="slide level3">
 <h3>Encoding as Binary</h3>
+<div class="fragment">
 <p>A naive code might look like this:</p>
 <ul>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mn>00</mn></mrow><annotation encoding="application/x-tex">A = 00</annotation></semantics></math></li>
@@ -400,20 +424,39 @@
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">C = 10</annotation></semantics></math></li>
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>11</mn></mrow><annotation encoding="application/x-tex">D = 11</annotation></semantics></math></li>
 </ul>
+</div>
+<div class="fragment">
 <p>This has a fixed <em>code rate</em>, (the mean number of bits transmitted), <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">R=2</annotation></semantics></math>.</p>
 <aside class="notes">
-<p>TODO: Convert this to a tables=</p>
+<p>How would we encode this as binary?</p>
+<p><em>click</em></p>
+<p>We have four letters, so we can use two bits per letter right?</p>
+<p><em>click</em></p>
+<p>So this has what we call a “Fixed Code Rate”, that is, on average, for each letter transmitted, we will send two bits and always send two bits! We call this R.</p>
 </aside>
+</div>
 </section>
 <section id="entropy-of-the-system" class="slide level3">
 <h3>Entropy of the system</h3>
+<p>Remember:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mo>−</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>p</mi><mi>i</mi></msub><msub><mo>log</mo><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>p</mi><mi>i</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">H = - \sum\limits_i p_i \log_2(p_i)</annotation></semantics></math></p>
+<div>
 <ul>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mi>.</mi><mi>.</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">H=...</annotation></semantics></math></li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">=H(A)+H(B)+H(C)+H(D)</annotation></semantics></math></li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>−</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mn>2</mn><mo>−</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mn>3</mn><mo>−</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mn>3</mn></mrow><annotation encoding="application/x-tex">=-\frac{1}{2}-\frac{1}{4}2-\frac{1}{8}3-\frac{1}{8}3</annotation></semantics></math></li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>−</mo><mfrac><mn>3</mn><mn>8</mn></mfrac><mo>−</mo><mfrac><mn>3</mn><mn>8</mn></mfrac></mrow><annotation encoding="application/x-tex">=-\frac{1}{2}-\frac{1}{2}-\frac{3}{8}-\frac{3}{8}</annotation></semantics></math></li>
-<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mo>−</mo><mn>1.75</mn></mrow><annotation encoding="application/x-tex">=-1.75</annotation></semantics></math></li>
+<li class="fragment"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>H</mi><mo>=</mo><mi>.</mi><mi>.</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">H=...</annotation></semantics></math></li>
+<li class="fragment"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>H</mi><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">=H(A)+H(B)+H(C)+H(D)</annotation></semantics></math></li>
+<li class="fragment"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>−</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mn>2</mn><mo>−</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mn>3</mn><mo>−</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mn>3</mn></mrow><annotation encoding="application/x-tex">=-\frac{1}{2}-\frac{1}{4}2-\frac{1}{8}3-\frac{1}{8}3</annotation></semantics></math></li>
+<li class="fragment"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>−</mo><mfrac><mn>3</mn><mn>8</mn></mfrac><mo>−</mo><mfrac><mn>3</mn><mn>8</mn></mfrac></mrow><annotation encoding="application/x-tex">=-\frac{1}{2}-\frac{1}{2}-\frac{3}{8}-\frac{3}{8}</annotation></semantics></math></li>
+<li class="fragment"><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mo>−</mo><mn>1.75</mn></mrow><annotation encoding="application/x-tex">=-1.75</annotation></semantics></math></li>
 </ul>
+</div>
+<aside class="notes">
+<p>So what is the entropy of this system then? Although it still seems like we are plugging arbitrary numbers into equations, it will all make sense!</p>
+<p>So we are calculating the entropy of an ensemble here, so here we go!</p>
+<p><em>click</em></p>
+<p>(once all clicked)</p>
+<p>So what does this mean? It means that on average, in our system, each symbol carries 1.75 bits of information.</p>
+<p>So what does that tell us about our code?</p>
+</aside>
 </section>
 <section id="coding-efficiency" class="slide level3">
 <h3>Coding Efficiency</h3>
@@ -421,6 +464,7 @@
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>1.75</mn><mi>/</mi><mn>2</mn><mo>=</mo><mn>0.875</mn></mrow><annotation encoding="application/x-tex">\mu=1.75/2=0.875</annotation></semantics></math></p>
 <aside class="notes">
 <p>The implication is that a coding <em>should</em> exist that itself has a coding rate <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mi>H</mi></mrow><annotation encoding="application/x-tex">R=H</annotation></semantics></math>, and if we can find-it, it will be optimal.</p>
+<p>So yeah, maybe there is a different code with a code rate R of 1.75?</p>
 </aside>
 </section>
 <section id="variable-length-coding" class="slide level3">
@@ -433,11 +477,22 @@
 <li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>111</mn></mrow><annotation encoding="application/x-tex">D = 111</annotation></semantics></math></li>
 </ul>
 <div class="fragment">
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>2</mn><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>3</mn><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>3</mn><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1.75</mn></mrow><annotation encoding="application/x-tex">R=p(A)+2p(B)+3p(C)+3p(D)=1.75</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>2</mn><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>B</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>3</mn><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>C</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>3</mn><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">R=p(A)+2p(B)+3p(C)+3p(D)</annotation></semantics></math></p>
+</div>
+<div class="fragment">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>=</mo><mn>1.75</mn></mrow><annotation encoding="application/x-tex">=1.75</annotation></semantics></math></p>
 <aside class="notes">
+<p>So here’s one I made earlier.</p>
 <p>Explain variable length coding, and useful properties (each symbol uniquely and instantaneously decodable).</p>
-<p><hit next></p>
-<p>Look, it’s entropy matches R!</p>
+<p>Now, if we were to calculate the likely hood each instance of this code is to appear, and how their cost, what is the code rate now?</p>
+<p><em>click</em></p>
+<p>Explain probabilities calculation.</p>
+<p><em>click</em></p>
+<p>Look, R matches the entropy of this system!</p>
+<p>Aside: So, this code was plucked out-of thin air, but it has some important properties that make it work.</p>
+<p>Firstly, if we tried to find a code with a lower coding-rate, we can’t, because that’s impossible to do without losing information, so we know this is the most maximally efficient code.</p>
+<p>It’s also instantly decodable, no symbol encoding is prefix of another symbol, so we don’t need to wait for further messages.</p>
+<p>These things can be easy to mess up in more complex situations, and there are systems for constructing codes like this (such as huffman trees).</p>
 </aside>
 </div>
 </section>
@@ -451,7 +506,7 @@
 <ul>
 <li>Could be affected by previous symbol (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><mi>U</mi><mo stretchy="false" form="prefix">|</mo><mi>Q</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(U|Q)</annotation></semantics></math> is high!)</li>
 <li>Can be dependant on context, the <em>type</em> of data: photos vs cartoons.</li>
-<li>Can depend on recipient (encryption!)</li>
+<li>Can depend on recipient, do they know what you are going to send?</li>
 </ul>
 <aside class="notes">
 <p>The goal of encryption is transmit data in such a way that it contains no information for anyone except the intended receiver.</p>

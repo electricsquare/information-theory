@@ -134,7 +134,7 @@ Not maths accurate!
 
 ### Data Is Not Information
 
-**Intuition:** A new hard drive has 1,000,000,000,000 bits of data, but not 1,000,000,000,000.
+**Intuition:** A new hard drive has 1,000,000,000,000 bits of data, but not 1,000,000,000,000 bits *of information*.
 
 Is there a difference between a 0-initialized hard drive, and a randomly-initialized hard drive in terms of information?
 
@@ -213,9 +213,11 @@ I find it awesome that our brains can run super-hardcore bayesian inference like
 
 ::: notes
 
-We are going to delve into some probility basics.
+We are going to delve into some probability basics.
 
-Bear with me as this is imporant to understand, I'm going to go over this thoroughly as it helps a lot. But if you do get lost, I will stick to intuitive explenations for the rest of the talk.
+Bear with me as this is important to understand, I'm going to go over this thoroughly as it helps a lot. But if you do get lost, I will stick to intuitive explanations for the rest of the talk.
+
+Information Theory is *defined by* probability, because as we will discover, information *is* entropy *is* randomness.
 
 :::
 
@@ -521,11 +523,19 @@ TODO: Intuition
 
 :::
 
-### Intuition
+### Intuition of Entropy
+
+::: {style='font-size: 0.7em'}
 
 Bit, $b$ with $p_{b=1}=1-p_{b=0}$
 
+:::
+
+
 . . .
+
+
+::: {style='font-size: 0.7em'}
 
 ```{.matplotlib
   caption="$$H(b)=-p_{b=1}\log_2(p_{b=1})-(1-p_{b=0})\log_2(1-p_{b=0})$$"
@@ -548,6 +558,8 @@ plt.plot(p_values, hp_values)
 ```
 
 When $p=0.5$, the Entropy maxes-out at 1.
+
+:::
 
 ::: notes
 
@@ -584,16 +596,52 @@ This section will explain why we all 1 bit of information, a 'bit'.
 
 ### Codes
 
-Stream of data can produce $A$, $B$, $C$ and $D$, with:
+Imagine Alice sending Bob $A$, $B$, $C$ and $D$, with:
+
+::: incremental
 
 - $p(A)=\frac{1}{2}$
 - $p(B)=\frac{1}{4}$
 - $p(C)=\frac{1}{8}$
 - $p(D)=\frac{1}{8}$
 
+:::
+
+. . .
+
+Example: DADDBBADAABBAACBDABCAAADC
+
+::: notes
+
+Let's say Alice is send Bob a sequence letters, "A, B, C & D".
+
+*click*
+
+Where the probability she will send A is a half.
+
+*click*
+
+B is a quarter
+
+*click*
+
+C is 1/8
+
+*click*
+
+D is 1/8
+
+*click*
+
+With an example (generated randomly!)
+
+:::
+
 ---
 
 ### Encoding as Binary
+
+. . .
 
 A naive code might look like this:
 
@@ -602,22 +650,57 @@ A naive code might look like this:
 - $C = 10$
 - $D = 11$
 
+. . .
+
 This has a fixed *code rate*, (the mean number of bits transmitted), $R=2$.
 
 ::: notes
 
-TODO: Convert this to a tables=
+How would we encode this as binary?
+
+*click*
+
+We have four letters, so we can use two bits per letter right?
+
+*click*
+
+So this has what we call a "Fixed Code Rate", that is, on average, for each letter transmitted, we will send two bits and always send two bits! We call this R.
+
 :::
 
 ---
 
 ### Entropy of the system
 
+Remember:
+
+$$H = - \sum\limits_i p_i \log_2(p_i)$$
+
+::: incremental
+
 - $H=...$
 - $=H(A)+H(B)+H(C)+H(D)$
 - $=-\frac{1}{2}-\frac{1}{4}2-\frac{1}{8}3-\frac{1}{8}3$
 - $=-\frac{1}{2}-\frac{1}{2}-\frac{3}{8}-\frac{3}{8}$
 - $=-1.75$
+
+:::
+
+::: notes
+
+So what is the entropy of this system then? Although it still seems like we are plugging arbitrary numbers into equations, it will all make sense!
+
+So we are calculating the entropy of an ensemble here, so here we go!
+
+*click*
+
+(once all clicked)
+
+So what does this mean? It means that on average, in our system, each symbol carries 1.75 bits of information.
+
+So what does that tell us about our code?
+
+:::
 
 ---
 
@@ -630,6 +713,8 @@ $$\mu=1.75/2=0.875$$
 ::: notes
 
 The implication is that a coding *should* exist that itself has a coding rate $R=H$, and if we can find-it, it will be optimal.
+
+So yeah, maybe there is a different code with a code rate R of 1.75?
 
 :::
 
@@ -646,15 +731,36 @@ Now imagine:
 
 . . .
 
-$$R=p(A)+2p(B)+3p(C)+3p(D)=1.75$$
+$$R=p(A)+2p(B)+3p(C)+3p(D)$$
+
+. . .
+
+$$=1.75$$
 
 ::: notes
 
+So here's one I made earlier.
+
 Explain variable length coding, and useful properties (each symbol uniquely and instantaneously decodable).
 
-<hit next>
+Now, if we were to calculate the likely hood each instance of this code is to appear, and how their cost, what is
+the code rate now?
 
-Look, it's entropy matches R!
+*click*
+
+Explain probabilities calculation.
+
+*click*
+
+Look, R matches the entropy of this system!
+
+Aside: So, this code was plucked out-of thin air, but it has some important properties that make it work.
+
+Firstly, if we tried to find a code with a lower coding-rate, we can't, because that's impossible to do without losing information, so we know this is the most maximally efficient code.
+
+It's also instantly decodable, no symbol encoding is prefix of another symbol, so we don't need to wait for further messages.
+
+These things can be easy to mess up in more complex situations, and there are systems for constructing codes like this (such as huffman trees).
 
 :::
 
@@ -674,7 +780,7 @@ Probabilities in symbol streams rarely fixed
 
 - Could be affected by previous symbol ($p(U|Q)$ is high!)
 - Can be dependant on context, the *type* of data: photos vs cartoons.
-- Can depend on recipient (encryption!)
+- Can depend on recipient, do they know what you are going to send?
 
 ::: notes
 
@@ -683,6 +789,7 @@ The goal of encryption is transmit data in such a way that it contains no inform
 This is unfortunately the limits we will get to with lossless compression, but you can see the foundations of a mathematical system for understanding this stuff.
 
 Good compression systems are as much about trying to accurately *discern* the entropy of each symbol for the target recipient.
+
 :::
 
 ---
