@@ -705,7 +705,7 @@ Coding covers how different ways of coding the same data can make it more or les
 
 ---
 
-### TODO Compression
+### Compression is... hard
 
 - We want to find out the best estimate $p(B_{n+1}|B_{0..n})$, for the recipient...
 - Context is key, the more specific you can be the more information you already have.
@@ -721,16 +721,51 @@ Coding covers how different ways of coding the same data can make it more or les
 - Dictionary-Based, assume what comes before will come again.
 - Run length-encoding, assume things won't change
 - Tom Scott Video Compression
-- Learning Compressors, Give example data, they compress it. (Oodlenetwork compression) TODO
+- Learning Compressors, Give example data, they compress it. 
 
 :::
 
+---
+
+### Dictionary Method - Assume Repeated Patterns
+
+(LZW, gif)
+
+Every time a new "word" is encountered, put it in a dictionary. Next time you encounter it, refer to the dictionary entry.
+
+. . .
+
+Constructing the "best" dictionary is hard.
 
 
+---
+
+### Run-Length Encoding
+
+Assume data will often be repeated, so count number of repeated bytes and store that and first instance.
+
+---
+
+### Learning Compressors
+
+Train compressor for specific-use case.
+
+[Oodle Network Compression](http://www.radgametools.com/oodlenetwork.htm) does this by building dictionary for network packets ahead-of-time that is shipped with the game.
 
 
+---
 
-## Lossy Compression (TODO) High-Level if time
+### Lossy Compression
+
+Really good for images/videos - goal is to throw away information that our eyes tend to naturally discard anyway.
+
+. . . 
+
+JPEG uses FFT to achieve this example.
+
+. . . 
+
+A broad topic, that can be expanded on at a later date.
 
 
 
@@ -895,6 +930,7 @@ More talks available! Chips! Git!
 - [What is NOT Random?](https://www.youtube.com/watch?v=sMb00lz-IfE) - Veritasium
 - [Why Black Holes Could Delete The Universe](https://www.youtube.com/watch?v=yWO-cvGETRQ) - Kurzgesagt
 - [Intro to Information Theory](https://www.youtube.com/watch?v=_PG-jJKB_do) - Up and Atom
+- [Why Snow and Confetti Ruin YouTube Video Quality](https://www.youtube.com/watch?v=r6Rp-uo6HmI) - Tom Scott
 
 ---
 

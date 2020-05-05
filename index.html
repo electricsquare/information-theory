@@ -474,8 +474,8 @@
 <p>Coding covers how different ways of coding the same data can make it more or less efficient, but how does this apply to general-purpose compression?</p>
 </aside>
 </section>
-<section id="todo-compression" class="slide level3">
-<h3>TODO Compression</h3>
+<section id="compression-is-hard" class="slide level3">
+<h3>Compression is… hard</h3>
 <ul>
 <li>We want to find out the best estimate <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>B</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="prefix">|</mo><msub><mi>B</mi><mrow><mn>0</mn><mi>.</mi><mi>.</mi><mi>n</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">p(B_{n+1}|B_{0..n})</annotation></semantics></math>, for the recipient…</li>
 <li>Context is key, the more specific you can be the more information you already have.
@@ -492,15 +492,37 @@
 <li>Dictionary-Based, assume what comes before will come again.</li>
 <li>Run length-encoding, assume things won’t change</li>
 <li>Tom Scott Video Compression</li>
-<li>Learning Compressors, Give example data, they compress it. (Oodlenetwork compression) TODO</li>
+<li>Learning Compressors, Give example data, they compress it.</li>
 </ul>
 </aside>
-</section></section>
-<section id="lossy-compression-todo-high-level-if-time" class="title-slide slide level2">
-<h2>Lossy Compression (TODO) High-Level if time</h2>
-
 </section>
-
+<section id="dictionary-method---assume-repeated-patterns" class="slide level3">
+<h3>Dictionary Method - Assume Repeated Patterns</h3>
+<p>(LZW, gif)</p>
+<p>Every time a new “word” is encountered, put it in a dictionary. Next time you encounter it, refer to the dictionary entry.</p>
+<div class="fragment">
+<p>Constructing the “best” dictionary is hard.</p>
+</div>
+</section>
+<section id="run-length-encoding" class="slide level3">
+<h3>Run-Length Encoding</h3>
+<p>Assume data will often be repeated, so count number of repeated bytes and store that and first instance.</p>
+</section>
+<section id="learning-compressors" class="slide level3">
+<h3>Learning Compressors</h3>
+<p>Train compressor for specific-use case.</p>
+<p><a href="http://www.radgametools.com/oodlenetwork.htm">Oodle Network Compression</a> does this by building dictionary for network packets ahead-of-time that is shipped with the game.</p>
+</section>
+<section id="lossy-compression" class="slide level3">
+<h3>Lossy Compression</h3>
+<p>Really good for images/videos - goal is to throw away information that our eyes tend to naturally discard anyway.</p>
+<div class="fragment">
+<p>JPEG uses FFT to achieve this example.</p>
+</div>
+<div class="fragment">
+<p>A broad topic, that can be expanded on at a later date.</p>
+</div>
+</section></section>
 <section>
 <section id="relations" class="title-slide slide level2">
 <h2>Relations</h2>
@@ -614,6 +636,7 @@
 <li><a href="https://www.youtube.com/watch?v=sMb00lz-IfE">What is NOT Random?</a> - Veritasium</li>
 <li><a href="https://www.youtube.com/watch?v=yWO-cvGETRQ">Why Black Holes Could Delete The Universe</a> - Kurzgesagt</li>
 <li><a href="https://www.youtube.com/watch?v=_PG-jJKB_do">Intro to Information Theory</a> - Up and Atom</li>
+<li><a href="https://www.youtube.com/watch?v=r6Rp-uo6HmI">Why Snow and Confetti Ruin YouTube Video Quality</a> - Tom Scott</li>
 </ul>
 </section>
 <section id="references" class="slide level3">
