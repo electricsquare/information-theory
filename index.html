@@ -68,7 +68,7 @@
 <ul>
 <li>Compression (duh!)</li>
 <li>Communications and Networking (duh!)</li>
-<li>Data Oriented Design</li>
+<li>Data-Oriented Design</li>
 <li>Security</li>
 <li>Machine Learning (huh?)</li>
 <li>Computer Vision (huh?)</li>
@@ -80,7 +80,6 @@
 <p><em>click</em></p>
 <p>We will be delving into the more interesting links later, and go in depth on these.</p>
 <p>Outside of Computer Science, relevant to subjects from linguistics, to physics and how the universe itself works!</p>
-<p>TODO: https://www.youtube.com/watch?v=sMb00lz-IfE</p>
 </aside>
 </div>
 </section>
@@ -95,7 +94,7 @@
 <p><em>Not</em> mathematically rigorous! Arguments rely on intuition, <em>not</em> formal proof. User-friendly, <em>not</em> technically precise.</p>
 <aside class="notes">
 <p>Very high level overview, will give you taste of what doors Information theory opens-up.</p>
-<p>Applicable outside of Computer Science, is important to understanding reality itself! TODO: https://www.youtube.com/watch?v=yWO-cvGETRQ</p>
+<p>Applicable outside of Computer Science, is important to understanding reality itself!</p>
 <p><em>click</em></p>
 <p>Not maths accurate!</p>
 </aside>
@@ -205,8 +204,7 @@
 <p>Example: The Probability that Alice will buy a hot dog <em>and</em> ketchup?</p>
 <aside class="notes">
 <p><em>click</em></p>
-<p>If we know the probability of Alice buying ketchup given that she’s bought a hot dog. <em>And</em> we know how likely she is to buy a hot dog. Then we know how likely <em>both</em> are to happen.#</p>
-<p>TODO: https://www.youtube.com/watch?v=_PG-jJKB_do</p>
+<p>If we know the probability of Alice buying ketchup given that she’s bought a hot dog. <em>And</em> we know how likely she is to buy a hot dog. Then we know how likely <em>both</em> are to happen.</p>
 </aside>
 </div>
 </section>
@@ -514,7 +512,7 @@
 <ul>
 <li>Compression (duh!)</li>
 <li>Communications and Networking (duh!) (next time)</li>
-<li>Data Oriented Design</li>
+<li>Data-Oriented Design</li>
 <li>Security</li>
 <li>Machine Learning (huh?)</li>
 <li>Computer Vision (huh?)</li>
@@ -522,27 +520,64 @@
 <li>^^ Almost Everything in Computer Science</li>
 </ul>
 </section>
-<section id="todo-how-these-all-relate" class="slide level3">
-<h3>TODO How these all relate</h3>
-</section>
-<section id="data-oriented-design---cppcon-2014" class="slide level3">
-<h3>Data Oriented Design - CppCon 2014</h3>
-<p>TODO: explain https://youtu.be/rX0ItVEVjHc?t=3064</p>
-<p>// TODO: add to references</p>
+<section id="data-oriented-design-actonmike2014" class="slide level3">
+<h3>Data-Oriented Design <span class="citation" data-cites="ActonMike2014">(Acton 2014)</span></h3>
+<p>A strongly recommended talk from CppCon in 2014.</p>
+<div class="fragment">
+<p><img data-src="img/cpp_con_info_density_action_2014.jpg" width="450" /></p>
+<p>Information Density in context is important for Data-Oriented Design!</p>
+<aside class="notes">
+<p>Mike Acton gave a really good talk in 2014 strong advocating software engineering by focusing on “solving the problem you have to solve” - identifying that all software problems are ultimately problems of data transformation on a concrete set of hardware.</p>
+<p>With Modern CPUs, this means the focus is often on transforming data in a way that makes effective use of CPU caches.</p>
+<p>Being able to reason about information density is an important part of that.</p>
+<p><em>click</em></p>
+<p>Not only do you have the problem of the cache misses caused by computing a single bit each frame, but the information density here is incredibly low on top of that!</p>
+<p>I would strongly recommended watch the full talk if you want to learn more.</p>
+</aside>
+</div>
 </section>
 <section id="security---encryption" class="slide level3">
 <h3>Security - Encryption</h3>
-<p>TODO</p>
+<figure>
+<img data-src="img/keys_george_becker.jpg" width="600" alt="" /><figcaption>Image Source: <a href="https://www.pexels.com/@eye4dtail">George Becker</a></figcaption>
+</figure>
+<p>Goal: Meaningful <em>only</em> to the intended recipient.</p>
+<aside class="notes">
+<p>Encryption is all about encoding information so that only someone with the right <em>priors</em> can extract meaning from it. From an information theory point-of-view it’s still the same <em>amount</em> of information from a probability perspective.</p>
+<p>Public-key cryptography is a really interesting case.</p>
+<p>When you broadcast information encrypted using someone’s public key, everyone is receiving that information with the same density. However, only the person with the right corresponding private key can decrypt it.</p>
+<p>What’s fascinating here is that the public key <em>is</em> an encoding of the private key - but the work involved to extract that information just requires a lot of energy. All the information you might need to acquire the private key is there, you just can’t access it.</p>
+</aside>
 </section>
-<section id="machine-learning-computer-graphics---nvidias-dlss" class="slide level3">
-<h3>Machine Learning + Computer Graphics - Nvidia’s DLSS</h3>
-<p>TODO Slide On this</p>
+<section id="machine-learning-computer-graphics---dlss-nvidiadlss2020" class="slide level3">
+<h3>Machine Learning + Computer Graphics - DLSS <span class="citation" data-cites="NvidiaDlss2020">(NVIDIA 2020)</span></h3>
+<p><img data-src="img/nvidia-dlss-2-0-architecture.png" /></p>
+<aside class="notes">
+<p>Machine Learning Image Upscaling works because a 4x increase in image resolution does not make for a 4x increase in information - so computing that data every frame is wasteful.</p>
+<p>By training a neural network known as a “Convolutional Autoencoder” on examples of low-resolution and high-resolution images, we can make pretty good-looking reconstructions of high-resolution images from low-resolution ones.</p>
+<p>By feeding in historical data and motion vectors from previous frames, we can even reconstruct some higher-frequency data that would otherwise be aliased.</p>
+</aside>
 </section>
-<section id="computer-vision---how-the-eye-works" class="slide level3">
-<h3><del>Computer</del> Vision - How the eye works</h3>
+<section id="computer-vision---how-the-eye-workswikiblindspot" class="slide level3">
+<h3><del>Computer</del> Vision - How the eye works<span class="citation" data-cites="WikiBlindSpot">(Wikipedia 2020)</span></h3>
+<div class="fragment">
+<figure>
+<img data-src="img/blind_spot_demonstration.png" data-fontsize="10" alt="" /><figcaption>Instructions: Close one eye and focus appropriate letter (R for right or L for left). Place eye 3x distance between R and L from screen. Move back-and-forth until opposite letter dissapears.</figcaption>
+</figure>
+<aside class="notes">
+<p>Human vision is a wide and broad topic, but our brains and retinas exploit information theory <em>a lot</em> for in an attempt to efficiently allow us to <em>see</em> informationally rich images from relatively low-resolution data sources which contain a lot of noise, missing pixels, limited bandwidth, the wrong colours, etc.</p>
+<p><em>click</em></p>
+<p>Testing the process going wrong is where it gets interest. Everyone follow these instructions:</p>
+<p>Close one eye and focus the other on the appropriate letter (R for right or L for left). Place your eye a distance from the screen approximately equal to three times the distance between the R and the L. Move your eye towards or away from the screen until you notice the other letter disappear. For example, close your right eye, look at the “L” with your left eye, and the “R” will disappear.</p>
+<p>It’s amazing, our brain is filling in the data with what it “expects” to be there with the highest probability, only, it gets it wrong.</p>
+</aside>
+</div>
 </section>
 <section id="bonus-the-universe-itself" class="slide level3">
 <h3>Bonus: The Universe Itself!?</h3>
+<figure>
+<img data-src="img/universe_miriam_espacio.jpg" width="600" alt="" /><figcaption>Image Source: <a href="https://www.pexels.com/@miriamespacio">Miriam Espacio</a></figcaption>
+</figure>
 <aside class="notes">
 <p>One of the things that makes Information Theory hold a special place in my heart is the fact that it gives us a really interesting insight into the laws of the Universe itself.</p>
 <p>We live in a world that (as far as we know) is trending towards a state of entropy. We have established that no information at all, is the completely uniform and expected, so it seems like more and more information is constantly being added to the Universe within which we live.</p>
@@ -573,11 +608,28 @@
 <p>Subscribe to our <a href="https://www.youtube.com/channel/UCahevy2N_tj_ZOdsByl9L-A">YouTube Channel</a>!</p>
 <p>More talks available! Chips! Git!</p>
 </section>
+<section id="further-watching" class="slide level3">
+<h3>Further Watching</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=sMb00lz-IfE">What is NOT Random?</a> - Veritasium</li>
+<li><a href="https://www.youtube.com/watch?v=yWO-cvGETRQ">Why Black Holes Could Delete The Universe</a> - Kurzgesagt</li>
+<li><a href="https://www.youtube.com/watch?v=_PG-jJKB_do">Intro to Information Theory</a> - Up and Atom</li>
+</ul>
+</section>
 <section id="references" class="slide level3">
 <h3>References</h3>
 <div id="refs" class="references hanging-indent" role="doc-bibliography">
+<div id="ref-ActonMike2014">
+<p>Acton, Mike. 2014. “CppCon 2014: Mike Action ‘Data-Oriented Design and C++’.” <a href="https://youtu.be/rX0ItVEVjHc?t=3064">https://youtu.be/rX0ItVEVjHc?t=3064</a>.</p>
+</div>
 <div id="ref-DaugmanJohn2016">
 <p>Daugman, John. 2016. “Information Theory.” <a href="https://www.cl.cam.ac.uk/teaching/1617/InfoTheory/materials.html">https://www.cl.cam.ac.uk/teaching/1617/InfoTheory/materials.html</a>.</p>
+</div>
+<div id="ref-NvidiaDlss2020">
+<p>NVIDIA. 2020. “NVIDIA DLSS 2.0: A Big Leap in AI Rendering.” <a href="https://www.nvidia.com/en-gb/geforce/news/nvidia-dlss-2-0-a-big-leap-in-ai-rendering/">https://www.nvidia.com/en-gb/geforce/news/nvidia-dlss-2-0-a-big-leap-in-ai-rendering/</a>.</p>
+</div>
+<div id="ref-WikiBlindSpot">
+<p>Wikipedia. 2020. “Blind Spot (Vision).” <a href="https://en.wikipedia.org/wiki/Blind_spot_(vision)">https://en.wikipedia.org/wiki/Blind_spot_(vision)</a>.</p>
 </div>
 </div>
 </section>

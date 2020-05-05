@@ -12,6 +12,31 @@ references:
       date-parts:
       - - 2016
     URL: https://www.cl.cam.ac.uk/teaching/1617/InfoTheory/materials.html
+  - id: ActonMike2014
+    author:
+      - family: Acton
+        given: Mike
+    title: 'CppCon 2014: Mike Action "Data-Oriented Design and C++"'
+    issued:
+      date-parts:
+      - - 2014
+    URL: https://youtu.be/rX0ItVEVjHc?t=3064
+  - id: NvidiaDlss2020
+    author:
+      - family: NVIDIA
+    URL: https://www.nvidia.com/en-gb/geforce/news/nvidia-dlss-2-0-a-big-leap-in-ai-rendering/
+    title: 'NVIDIA DLSS 2.0: A Big Leap In AI Rendering'
+    issued:
+      date-parts:
+      - - 2020
+  - id: WikiBlindSpot
+    URL: https://en.wikipedia.org/wiki/Blind_spot_(vision)
+    author:
+      - family: Wikipedia
+    title: Blind spot (vision)
+    issued:
+      date-parts:
+      - - 2020
 nocite: |
   @DaugmanJohn2016
 ---
@@ -56,7 +81,7 @@ Widely Applicable! (Sneak Peak):
 
   - Compression (duh!)
   - Communications and Networking (duh!)
-  - Data Oriented Design
+  - Data-Oriented Design
   - Security
   - Machine Learning (huh?)
   - Computer Vision (huh?)
@@ -72,8 +97,6 @@ Information Theory has some pretty obvious applications, but hopefully some here
 We will be delving into the more interesting links later, and go in depth on these.
 
 Outside of Computer Science, relevant to subjects from linguistics, to physics and how the universe itself works!
-
-TODO: https://www.youtube.com/watch?v=sMb00lz-IfE
 
 :::
 
@@ -95,7 +118,7 @@ User-friendly, *not* technically precise.
 
 Very high level overview, will give you taste of what doors Information theory opens-up.
 
-Applicable outside of Computer Science, is important to understanding reality itself! TODO: https://www.youtube.com/watch?v=yWO-cvGETRQ
+Applicable outside of Computer Science, is important to understanding reality itself!
 
 *click*
 
@@ -276,9 +299,7 @@ Example: The Probability that Alice will buy a hot dog *and* ketchup?
 
 *click*
 
-If we know the probability of Alice buying ketchup given that she's bought a hot dog. *And* we know how likely she is to buy a hot dog. Then we know how likely *both* are to happen.#
-
-TODO: https://www.youtube.com/watch?v=_PG-jJKB_do
+If we know the probability of Alice buying ketchup given that she's bought a hot dog. *And* we know how likely she is to buy a hot dog. Then we know how likely *both* are to happen.
 
 :::
 
@@ -725,7 +746,7 @@ Case Studies
 
   - Compression (duh!)
   - Communications and Networking (duh!) (next time)
-  - Data Oriented Design
+  - Data-Oriented Design
   - Security
   - Machine Learning (huh?)
   - Computer Vision (huh?)
@@ -734,36 +755,97 @@ Case Studies
 
 ---
 
-### TODO How these all relate
+### Data-Oriented Design [@ActonMike2014]  
 
----
+A strongly recommended talk from CppCon in 2014.
 
-### Data Oriented Design - CppCon 2014
+. . .
 
-TODO: explain https://youtu.be/rX0ItVEVjHc?t=3064
+![](img/cpp_con_info_density_action_2014.jpg){width=450}
 
-// TODO: add to references
+Information Density in context is important for Data-Oriented Design!
+
+::: notes
+
+Mike Acton gave a really good talk in 2014 strong advocating software engineering by focusing on "solving the problem you have to solve" - identifying that all software problems are ultimately problems of data transformation on a concrete set of hardware.
+
+With Modern CPUs, this means the focus is often on transforming data in a way that makes effective use of CPU caches.
+
+Being able to reason about information density is an important part of that.
+
+*click*
+
+Not only do you have the problem of the cache misses caused by computing a single bit each frame, but the information density here is incredibly low on top of that!
+
+I would strongly recommended watch the full talk if you want to learn more.
+
+:::
 
 ---
 
 ### Security - Encryption
 
-TODO
+![Image Source: [George Becker](https://www.pexels.com/@eye4dtail)](img/keys_george_becker.jpg){width=600}
+
+Goal: Meaningful *only* to the intended recipient.
+
+::: notes
+
+Encryption is all about encoding information so that only someone with the right *priors* can extract meaning from it. From an information theory point-of-view it's still the same *amount* of information from a probability perspective.
+
+Public-key cryptography is a really interesting case.
+
+When you broadcast information encrypted using someone's public key, everyone is receiving that information with the same density. However, only the person with the right corresponding private key can decrypt it. 
+
+What's fascinating here is that the public key *is* an encoding of the private key - but the work involved to extract that information just requires a lot of energy. All the information you might need to acquire the private key is there, you just can't access it.
+
+:::
 
 ---
 
-### Machine Learning + Computer Graphics - Nvidia's DLSS
+### Machine Learning + Computer Graphics - DLSS [@NvidiaDlss2020]
 
-TODO Slide On this
+![](img/nvidia-dlss-2-0-architecture.png)
+
+::: notes
+
+Machine Learning Image Upscaling works because a 4x increase in image resolution does not make for a 4x increase in information - so computing that data every frame is wasteful.
+
+By training a neural network known as a "Convolutional Autoencoder" on examples of low-resolution and high-resolution images, we can make pretty good-looking reconstructions of high-resolution images from low-resolution ones.
+
+By feeding in historical data and motion vectors from previous frames, we can even reconstruct some higher-frequency data that would otherwise be aliased.
+
+:::
 
 
 ---
 
-### ~~Computer~~ Vision - How the eye works
+### ~~Computer~~ Vision - How the eye works[@WikiBlindSpot]
+
+. . .
+
+![Instructions: Close one eye and focus appropriate letter (R for right or L for left). Place eye 3x distance between R and L from screen. Move back-and-forth until opposite letter dissapears.](img/blind_spot_demonstration.png){fontsize=10}
+
+
+::: notes
+
+Human vision is a wide and broad topic, but our brains and retinas exploit information theory *a lot* for in an attempt to efficiently allow us to *see* informationally rich images from relatively low-resolution data sources which contain a lot of noise, missing pixels, limited bandwidth, the wrong colours, etc.
+
+*click*
+
+Testing the process going wrong is where it gets interest. Everyone follow these instructions:
+
+Close one eye and focus the other on the appropriate letter (R for right or L for left). Place your eye a distance from the screen approximately equal to three times the distance between the R and the L. Move your eye towards or away from the screen until you notice the other letter disappear. For example, close your right eye, look at the "L" with your left eye, and the "R" will disappear. 
+
+It's amazing, our brain is filling in the data with what it "expects" to be there with the highest probability, only, it gets it wrong.
+
+:::
 
 ---
 
 ### Bonus: The Universe Itself!?
+
+![Image Source: [Miriam Espacio](https://www.pexels.com/@miriamespacio)](img/universe_miriam_espacio.jpg){width=600}
 
 ::: notes
 
@@ -805,6 +887,14 @@ I hope you found this interesting and it has piqued your interest for more on in
 Subscribe to our [YouTube Channel](https://www.youtube.com/channel/UCahevy2N_tj_ZOdsByl9L-A)!
 
 More talks available! Chips! Git!
+
+---
+
+### Further Watching
+
+- [What is NOT Random?](https://www.youtube.com/watch?v=sMb00lz-IfE) - Veritasium
+- [Why Black Holes Could Delete The Universe](https://www.youtube.com/watch?v=yWO-cvGETRQ) - Kurzgesagt
+- [Intro to Information Theory](https://www.youtube.com/watch?v=_PG-jJKB_do) - Up and Atom
 
 ---
 
